@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
-import { getShoe, getPersonas, getGoals, getBestAffiliateUrl, getBestPrice } from '@/lib/data'
-import hubData from '@/data/pages/marathon-hub.json'
-import authorData from '@/data/authors/ashley-morgan.json'
-import type { HubPageData, HubShoeRecommendation } from '@/types/cms'
+import { getShoe, getPersonas, getGoals, getBestAffiliateUrl, getBestPrice, getHubPage, getAuthor } from '@/lib/data'
+import type { HubShoeRecommendation } from '@/types/cms'
 import type { Author } from '@/types/author'
 import BreadcrumbNav from '@/components/shared/BreadcrumbNav'
 import FindMyShoe from '@/components/hub/FindMyShoe'
@@ -15,140 +13,105 @@ import FAQAccordion from '@/components/shared/FAQAccordion'
 import AffiliateDisclosure from '@/components/shared/AffiliateDisclosure'
 import AuthorBlock from '@/components/shared/AuthorBlock'
 
-const page = hubData as HubPageData
-const author = authorData as Author
+export const dynamic = 'force-dynamic'
 
-export const metadata: Metadata = {
-  title: page.metaTitle,
-  description: page.metaDescription,
-  alternates: { canonical: page.canonicalUrl },
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getHubPage('marathon')
+  return {
+    title: page?.metaTitle,
+    description: page?.metaDescription,
+    alternates: { canonical: page?.canonicalUrl },
+  }
 }
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'CollectionPage',
-  name: page.title,
-  description: page.metaDescription,
-  url: `https://therundown.co.uk${page.canonicalUrl}`,
-  dateModified: page.lastUpdated,
-}
+export default async function MarathonHubPage() {
+  const [page, personas, goals, author] = await Promise.all([
+    getHubPage('marathon'),
+    getPersonas(),
+    getGoals(),
+    getAuthor('ashley-morgan'),
+  ])
 
-export default function MarathonHubPage() {
-  const personas = getPersonas().filter(p => page.personasShown.includes(p.id))
-  const goals = getGoals()
+  if (!page) return <div className="wrap" style={{ padding: '60px 0' }}>Page not found in database. Run <code>npm run seed</code> first.</div>
 
-  const shoeCards = (page.shoeRecommendations as HubShoeRecommendation[]).map(rec => {
-    const shoe = getShoe(rec.shoeId)!
-    return { shoe, rec }
-  })
+  const filteredPersonas = personas.filter(p => page.personasShown.includes(p.id))
 
-  const comparisonShoes = shoeCards.map(({ shoe }) => ({
-    shoe,
-    label: shoe.name,
-  }))
+  const shoeCards = await Promise.all(
+    (page.shoeRecommendations as HubShoeRecommendation[]).map(async rec => ({
+      shoe: (await getShoe(rec.shoeId))!,
+      rec,
+      affiliateUrl: await getBestAffiliateUrl(rec.shoeId),
+      bestPrice: await getBestPrice(rec.shoeId),
+    }))
+  )
 
-  const comparisonRows = page.comparisonRows.map(row => ({
-    label: getShoe(row.shoeId)?.name ?? row.shoeId,
-    values: [row.bestFor, row.runnerType, row.cushion, row.weight, row.drop, row.carbon, row.priceTier] as Array<string | boolean>,
-  }))
+  const comparisonRows = await Promise.all(
+    page.comparisonRows.map(async row => ({
+      label: (await getShoe(row.shoeId))?.name ?? row.shoeId,
+      values: [row.bestFor, row.runnerType, row.cushion, row.weight, row.drop, row.carbon, row.priceTier] as Array<string | boolean>,
+    }))
+  )
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: page.title,
+    description: page.metaDescription,
+    url: `https://therundown.co.uk${page.canonicalUrl}`,
+    dateModified: page.lastUpdated,
+  }
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <div className="wrap" style={{ paddingBottom: 60 }}>
         <BreadcrumbNav crumbs={[{ label: 'Home', url: '/' }, { label: 'Marathon' }]} />
 
-        {/* Hero */}
         <div style={{ maxWidth: '72ch', marginBottom: 32 }}>
-          <h1 style={{
-            fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 700, letterSpacing: '-0.02em',
-            lineHeight: 1.1, margin: '0 0 14px', color: 'var(--ink-900)',
-          }}>
+          <h1 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.1, margin: '0 0 14px', color: 'var(--ink-900)' }}>
             {page.title}
           </h1>
-          <p style={{ fontSize: 16, color: 'var(--ink-600)', lineHeight: 1.65, margin: 0 }}>
-            {page.subtitle}
-          </p>
+          <p style={{ fontSize: 16, color: 'var(--ink-600)', lineHeight: 1.65, margin: 0 }}>{page.subtitle}</p>
         </div>
 
-        <FindMyShoe personas={personas} goals={goals} defaultPersona={page.defaultPersona} />
+        <FindMyShoe personas={filteredPersonas} goals={goals} defaultPersona={page.defaultPersona} />
 
         <SubNavTabs tabs={page.subNavTabs} />
 
-        {/* Who this is for */}
         <div style={{ marginBottom: 40 }}>
-          <p style={{ fontSize: 14.5, color: 'var(--ink-600)', lineHeight: 1.7, maxWidth: '72ch', margin: 0 }}>
-            {page.whoThisIsFor}
-          </p>
+          <p style={{ fontSize: 14.5, color: 'var(--ink-600)', lineHeight: 1.7, maxWidth: '72ch', margin: 0 }}>{page.whoThisIsFor}</p>
         </div>
 
-        {/* Shoe cards */}
         <div style={{ marginBottom: 56 }}>
-          <h2 style={{
-            fontFamily: 'inherit', fontSize: 24, fontWeight: 700, letterSpacing: '-0.01em',
-            margin: '0 0 20px', color: 'var(--ink-900)',
-          }}>
-            Our picks
-          </h2>
-          <div className="picks-mobile" style={{
-            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20,
-          }}>
-            {shoeCards.map(({ shoe, rec }) => (
-              <ShoeCard
-                key={rec.shoeId}
-                shoe={shoe}
-                recommendation={rec}
-                variant="hub"
-                affiliateUrl={getBestAffiliateUrl(rec.shoeId)}
-                bestPrice={getBestPrice(rec.shoeId)}
-              />
+          <h2 style={{ fontFamily: 'inherit', fontSize: 24, fontWeight: 700, letterSpacing: '-0.01em', margin: '0 0 20px', color: 'var(--ink-900)' }}>Our picks</h2>
+          <div className="picks-mobile" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
+            {shoeCards.map(({ shoe, rec, affiliateUrl, bestPrice }) => (
+              <ShoeCard key={rec.shoeId} shoe={shoe} recommendation={rec} variant="hub" affiliateUrl={affiliateUrl} bestPrice={bestPrice} />
             ))}
           </div>
         </div>
 
         <AffiliateDisclosure variant="inline" />
 
-        {/* Editorial boxes */}
         <div style={{ marginTop: 56, marginBottom: 56 }}>
           <EditorialBoxes heading="How we think about marathon shoes" boxes={page.editorialBoxes} />
         </div>
 
-        {/* Find your fit */}
         <div style={{ marginBottom: 56 }}>
           <FindYourFit categories={page.findYourFitCategories} />
         </div>
 
-        {/* Comparison table */}
         <div style={{ marginBottom: 56 }}>
-          <h2 style={{
-            fontFamily: 'inherit', fontSize: 24, fontWeight: 700, letterSpacing: '-0.01em',
-            margin: '0 0 16px', color: 'var(--ink-900)',
-          }}>
-            Side by side
-          </h2>
-          <ComparisonTable
-            variant="hub"
-            rows={comparisonRows}
-            shoes={comparisonShoes}
-          />
+          <h2 style={{ fontFamily: 'inherit', fontSize: 24, fontWeight: 700, letterSpacing: '-0.01em', margin: '0 0 16px', color: 'var(--ink-900)' }}>Side by side</h2>
+          <ComparisonTable variant="hub" rows={comparisonRows} shoes={shoeCards.map(c => ({ label: c.shoe.name }))} />
         </div>
 
-        {/* FAQ */}
         <div style={{ marginBottom: 56 }}>
-          <FAQAccordion
-            heading="Common questions"
-            subheading="Things we get asked about marathon shoes."
-            faqs={page.faqs}
-            variant="hub"
-          />
+          <FAQAccordion heading="Common questions" subheading="Things we get asked about marathon shoes." faqs={page.faqs} variant="hub" />
         </div>
 
-        {/* Author */}
-        <AuthorBlock author={author} />
+        {author && <AuthorBlock author={author as Author} />}
       </div>
     </>
   )
