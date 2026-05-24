@@ -1,0 +1,77 @@
+{
+  "brandName": "The Run Down",
+  "brandInitials": "MR",
+  "items": [
+    {
+      "label": "By Distance",
+      "wide": true,
+      "groups": [
+        {
+          "heading": "Marathon",
+          "hubLabel": "Best Marathon Running Shoes",
+          "hubUrl": "/marathon",
+          "hubIcon": "home",
+          "spokes": [
+            { "label": "For beginners", "url": "/marathon/beginners" }
+          ]
+        },
+        {
+          "heading": "Half Marathon",
+          "hubLabel": "Best Half Marathon Running Shoes",
+          "hubUrl": "/half-marathon",
+          "hubIcon": "chart",
+          "spokes": []
+        }
+      ]
+    },
+    {
+      "label": "By Run Type",
+      "groups": [
+        {
+          "heading": null,
+          "items": [
+            { "label": "Best Road Running Shoes", "url": "#", "icon": "road" }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "By Session",
+      "groups": [
+        {
+          "heading": null,
+          "items": [
+            { "label": "Best Daily Training Shoes", "url": "#", "icon": "clock" }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "By Condition",
+      "groups": [
+        {
+          "heading": null,
+          "items": [
+            { "label": "Plantar Fasciitis", "url": "#", "icon": "foot" }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "By Budget",
+      "url": "#",
+      "simple": true
+    },
+    {
+      "label": "By Brand",
+      "groups": [
+        {
+          "heading": null,
+          "items": [
+            { "label": "Hoka", "url": "#", "icon": "brand" }
+          ]
+        }
+      ]
+    }
+  ]
+}

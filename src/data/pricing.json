@@ -1,0 +1,111 @@
+[
+  {
+    "shoeId": "nike-pegasus-41",
+    "retailers": [
+      {
+        "retailerId": "nike-uk",
+        "retailerName": "Nike",
+        "currentPrice": 134.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-16",
+        "priceHistory": [
+          { "price": 134.95, "date": "2026-05-01" },
+          { "price": 124.95, "date": "2026-03-15" }
+        ]
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "retailerName": "Running Warehouse UK",
+        "currentPrice": 129.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-16",
+        "priceHistory": [
+          { "price": 129.95, "date": "2026-05-01" }
+        ]
+      }
+    ]
+  },
+  {
+    "shoeId": "brooks-ghost-16",
+    "retailers": [
+      {
+        "retailerId": "brooks-uk",
+        "retailerName": "Brooks",
+        "currentPrice": 130.00,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-16",
+        "priceHistory": [
+          { "price": 130.00, "date": "2026-05-01" }
+        ]
+      }
+    ]
+  },
+  {
+    "shoeId": "asics-gel-kayano-31",
+    "retailers": [
+      {
+        "retailerId": "asics-uk",
+        "retailerName": "Asics",
+        "currentPrice": 180.00,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-16",
+        "priceHistory": [
+          { "price": 180.00, "date": "2026-05-01" },
+          { "price": 170.00, "date": "2026-02-01" }
+        ]
+      }
+    ]
+  },
+  {
+    "shoeId": "nike-alphafly-3",
+    "retailers": [
+      {
+        "retailerId": "nike-uk",
+        "retailerName": "Nike",
+        "currentPrice": 289.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-16",
+        "priceHistory": [
+          { "price": 289.95, "date": "2026-05-01" }
+        ]
+      }
+    ]
+  },
+  {
+    "shoeId": "saucony-endorphin-elite",
+    "retailers": [
+      {
+        "retailerId": "saucony-uk",
+        "retailerName": "Saucony",
+        "currentPrice": 269.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-16",
+        "priceHistory": [
+          { "price": 269.95, "date": "2026-05-01" }
+        ]
+      }
+    ]
+  },
+  {
+    "shoeId": "asics-metaspeed-edge-paris",
+    "retailers": [
+      {
+        "retailerId": "asics-uk",
+        "retailerName": "Asics",
+        "currentPrice": 249.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-16",
+        "priceHistory": [
+          { "price": 249.95, "date": "2026-05-01" }
+        ]
+      }
+    ]
+  }
+]

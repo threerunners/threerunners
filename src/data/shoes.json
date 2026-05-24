@@ -1,0 +1,266 @@
+[
+  {
+    "id": "nike-pegasus-41",
+    "name": "Nike Pegasus 41",
+    "brand": "Nike",
+    "version": "41",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 285,
+      "stackHeightHeel": 33,
+      "stackHeightToe": 23,
+      "dropMm": 10,
+      "carbonPlate": false,
+      "widthOptions": ["standard", "wide"]
+    },
+    "scores": {
+      "cushioning": 7,
+      "responsiveness": 7,
+      "stability": 6,
+      "durability": 8,
+      "valueForMoney": 8,
+      "overall": 7.5
+    },
+    "tags": {
+      "useCase": ["daily-trainer"],
+      "terrain": ["road"],
+      "distanceSuitability": ["5k", "10k", "half", "marathon"],
+      "runnerLevel": ["beginner", "intermediate"],
+      "pronationSuitability": ["neutral"],
+      "personaFit": ["new-runner", "parkrunner", "race-trainer"],
+      "conditionSuitability": []
+    },
+    "editorial": {
+      "verdict": "The most forgiving daily trainer Nike makes.",
+      "realTalkTags": ["Heavy trainer", "Everyday workhorse", "Nothing flashy"],
+      "whoThisIsFor": "Runners who want something reliable that won't let them down on a long Sunday run.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",
+      "altText": "Nike Pegasus 41 running shoe in white and grey",
+      "gallery": []
+    }
+  },
+  {
+    "id": "brooks-ghost-16",
+    "name": "Brooks Ghost 16",
+    "brand": "Brooks",
+    "version": "16",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 290,
+      "stackHeightHeel": 36,
+      "stackHeightToe": 24,
+      "dropMm": 12,
+      "carbonPlate": false,
+      "widthOptions": ["narrow", "standard", "wide", "extra-wide"]
+    },
+    "scores": {
+      "cushioning": 8,
+      "responsiveness": 6,
+      "stability": 7,
+      "durability": 8,
+      "valueForMoney": 8,
+      "overall": 7.5
+    },
+    "tags": {
+      "useCase": ["daily-trainer"],
+      "terrain": ["road"],
+      "distanceSuitability": ["10k", "half", "marathon"],
+      "runnerLevel": ["beginner", "intermediate"],
+      "pronationSuitability": ["neutral"],
+      "personaFit": ["new-runner", "parkrunner"],
+      "conditionSuitability": []
+    },
+    "editorial": {
+      "verdict": "Smoother than the Pegasus and a little roomier through the toe box.",
+      "realTalkTags": ["Plush and roomy", "Long-run friend", "Comfort-first"],
+      "whoThisIsFor": "Runners who prioritise comfort and want a shoe that disappears on long runs.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&q=80",
+      "altText": "Brooks Ghost 16 running shoe",
+      "gallery": []
+    }
+  },
+  {
+    "id": "asics-gel-kayano-31",
+    "name": "Asics Gel-Kayano 31",
+    "brand": "Asics",
+    "version": "31",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 295,
+      "stackHeightHeel": 40,
+      "stackHeightToe": 30,
+      "dropMm": 10,
+      "carbonPlate": false,
+      "widthOptions": ["standard", "wide"]
+    },
+    "scores": {
+      "cushioning": 9,
+      "responsiveness": 5,
+      "stability": 9,
+      "durability": 8,
+      "valueForMoney": 7,
+      "overall": 7.5
+    },
+    "tags": {
+      "useCase": ["daily-trainer", "stability"],
+      "terrain": ["road"],
+      "distanceSuitability": ["half", "marathon"],
+      "runnerLevel": ["beginner", "intermediate"],
+      "pronationSuitability": ["neutral", "overpronation"],
+      "personaFit": ["new-runner", "running-smart"],
+      "conditionSuitability": ["knee-pain", "overpronation"]
+    },
+    "editorial": {
+      "verdict": "Gentle stability that holds you together at mile 20.",
+      "realTalkTags": ["Gentle stability", "Mile-20 hero", "Knee-saver"],
+      "whoThisIsFor": "Runners who overpronate or get knee niggles — the 4D Guidance system catches your stride without feeling corrective.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&q=80",
+      "altText": "Asics Gel-Kayano 31 stability running shoe",
+      "gallery": []
+    }
+  },
+  {
+    "id": "nike-alphafly-3",
+    "name": "Nike Alphafly 3",
+    "brand": "Nike",
+    "version": "3",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 210,
+      "stackHeightHeel": 39,
+      "stackHeightToe": 35,
+      "dropMm": 4,
+      "carbonPlate": true,
+      "widthOptions": ["standard"]
+    },
+    "scores": {
+      "cushioning": 9,
+      "responsiveness": 9,
+      "stability": 5,
+      "durability": 5,
+      "valueForMoney": 6,
+      "overall": 8.5
+    },
+    "tags": {
+      "useCase": ["race-day"],
+      "terrain": ["road"],
+      "distanceSuitability": ["half", "marathon"],
+      "runnerLevel": ["intermediate", "advanced"],
+      "pronationSuitability": ["neutral"],
+      "personaFit": ["pb-chaser", "race-trainer"],
+      "conditionSuitability": []
+    },
+    "editorial": {
+      "verdict": "The Alphafly is overkill for most halves — but if you want zero compromises and the fastest 21.1km of your life, nothing else comes close.",
+      "realTalkTags": ["Carbon plate beast", "Race-day only", "Pace machine"],
+      "whoThisIsFor": "Experienced runners chasing a PB who want the fastest shoe money can buy.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",
+      "altText": "Nike Alphafly 3 carbon plated race shoe",
+      "gallery": []
+    }
+  },
+  {
+    "id": "saucony-endorphin-elite",
+    "name": "Saucony Endorphin Elite",
+    "brand": "Saucony",
+    "version": "2",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 188,
+      "stackHeightHeel": 39,
+      "stackHeightToe": 35,
+      "dropMm": 8,
+      "carbonPlate": true,
+      "widthOptions": ["standard"]
+    },
+    "scores": {
+      "cushioning": 8,
+      "responsiveness": 9,
+      "stability": 6,
+      "durability": 5,
+      "valueForMoney": 6,
+      "overall": 8.0
+    },
+    "tags": {
+      "useCase": ["race-day"],
+      "terrain": ["road"],
+      "distanceSuitability": ["half", "marathon"],
+      "runnerLevel": ["intermediate", "advanced"],
+      "pronationSuitability": ["neutral"],
+      "personaFit": ["pb-chaser", "race-trainer"],
+      "conditionSuitability": []
+    },
+    "editorial": {
+      "verdict": "Pure race-day precision for runners who know their pace and want a shoe that won't hold them back.",
+      "realTalkTags": ["Precision racer", "Light and fast", "Form rewarding"],
+      "whoThisIsFor": "Runners who know their race pace and want a shoe built around efficient, fast running.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&q=80",
+      "altText": "Saucony Endorphin Elite carbon race shoe",
+      "gallery": []
+    }
+  },
+  {
+    "id": "asics-metaspeed-edge-paris",
+    "name": "Asics Metaspeed Edge Paris",
+    "brand": "Asics",
+    "version": "Paris",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 195,
+      "stackHeightHeel": 37,
+      "stackHeightToe": 32,
+      "dropMm": 5,
+      "carbonPlate": true,
+      "widthOptions": ["standard"]
+    },
+    "scores": {
+      "cushioning": 7,
+      "responsiveness": 9,
+      "stability": 6,
+      "durability": 5,
+      "valueForMoney": 7,
+      "overall": 7.8
+    },
+    "tags": {
+      "useCase": ["race-day"],
+      "terrain": ["road"],
+      "distanceSuitability": ["half", "marathon"],
+      "runnerLevel": ["intermediate", "advanced"],
+      "pronationSuitability": ["neutral"],
+      "personaFit": ["race-trainer", "pb-chaser"],
+      "conditionSuitability": []
+    },
+    "editorial": {
+      "verdict": "Designed for cadence runners who turn over fast — the Edge rewards quick, efficient strides.",
+      "realTalkTags": ["Cadence runner", "Quick and light", "Efficient stride"],
+      "whoThisIsFor": "High-cadence runners who want a race shoe that matches their stride efficiency.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&q=80",
+      "altText": "Asics Metaspeed Edge Paris race shoe",
+      "gallery": []
+    }
+  }
+]

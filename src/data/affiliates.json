@@ -1,0 +1,81 @@
+[
+  {
+    "shoeId": "nike-pegasus-41",
+    "links": [
+      {
+        "retailerId": "nike-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-01-01"
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.07,
+        "programStatus": "active",
+        "lastUpdated": "2026-01-01"
+      }
+    ]
+  },
+  {
+    "shoeId": "brooks-ghost-16",
+    "links": [
+      {
+        "retailerId": "brooks-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-01-01"
+      }
+    ]
+  },
+  {
+    "shoeId": "asics-gel-kayano-31",
+    "links": [
+      {
+        "retailerId": "asics-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-01-01"
+      }
+    ]
+  },
+  {
+    "shoeId": "nike-alphafly-3",
+    "links": [
+      {
+        "retailerId": "nike-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-01-01"
+      }
+    ]
+  },
+  {
+    "shoeId": "saucony-endorphin-elite",
+    "links": [
+      {
+        "retailerId": "saucony-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-01-01"
+      }
+    ]
+  },
+  {
+    "shoeId": "asics-metaspeed-edge-paris",
+    "links": [
+      {
+        "retailerId": "asics-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-01-01"
+      }
+    ]
+  }
+]

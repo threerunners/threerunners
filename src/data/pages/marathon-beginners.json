@@ -1,0 +1,96 @@
+{
+  "id": "marathon-beginners",
+  "slug": "beginners",
+  "parentHub": "marathon",
+  "pillarType": "distance",
+  "title": "Best Marathon Running Shoes for Beginners",
+  "italicWord": "Beginners",
+  "subtitle": "Three shoes that will get you to 42.2km in one piece — no carbon, no hype, just the boring stuff that works.",
+  "metaTitle": "Best Marathon Running Shoes for Beginners 2026 | The Run Down",
+  "metaDescription": "The three best marathon shoes for first-time marathoners. No carbon, no hype — just reliable shoes that get you to the finish line in one piece. Curated by Ashley Morgan.",
+  "canonicalUrl": "/marathon/beginners",
+  "lastUpdated": "2026-05-24",
+  "author": "ashley-morgan",
+  "whoThisIsFor": "You're running your first marathon. You've got a training plan, you've done a half (or you're about to), and you're staring at a wall of shoes with no idea which one will get you to October in one piece. This page picks the shoe. It won't help with race-day super-shoes, advanced rotations, or how-to-recover-from-an-injury debates — there are other pages for that. It will get you to the start line in something that fits, lasts, and won't make 30km/week feel worse than it already does.",
+  "shoeRecommendations": [
+    {
+      "shoeId": "nike-pegasus-41",
+      "rank": 1,
+      "bannerType": "top",
+      "bannerLabel": "Our top pick for beginners",
+      "verdict": "The most forgiving daily trainer Nike makes — the shoe most first-time marathoners log the bulk of their training in. Nothing flashy, that's the point.",
+      "whyThisWorks": "Forgiving on tired legs, durable across hundreds of training kilometres, and impossible to outgrow before October.",
+      "features": [
+        { "label": "Forgiving", "positive": true },
+        { "label": "Durable", "positive": true },
+        { "label": "Not for racing", "positive": false }
+      ],
+      "realTalkTags": ["Heavy trainer", "Everyday workhorse", "Nothing flashy"],
+      "tags": ["Daily trainer", "🌱 New Runner"],
+      "priceTier": "££",
+      "priceChecked": "Checked 16 May",
+      "rideFeel": { "cushion": 78, "response": 70, "stability": 72 }
+    },
+    {
+      "shoeId": "brooks-ghost-16",
+      "rank": 2,
+      "bannerType": "alt",
+      "bannerLabel": "Editor's choice",
+      "verdict": "Smoother than the Pegasus, slightly plusher, a little roomier through the toe box. The best neutral shoe if you worry about hot spots or whether your feet will hold up.",
+      "whyThisWorks": "Forgiving cushion plus a roomy toe box — the shoe least likely to leave you with hot spots after a 3-hour long run.",
+      "features": [
+        { "label": "Plush ride", "positive": true },
+        { "label": "Wide options", "positive": true },
+        { "label": "Not the lightest", "positive": false }
+      ],
+      "realTalkTags": ["Plush and roomy", "Long-run friend", "Comfort-first"],
+      "tags": ["Daily trainer", "🌱 New Runner"],
+      "priceTier": "££",
+      "priceChecked": "Checked 16 May",
+      "rideFeel": { "cushion": 84, "response": 65, "stability": 75 }
+    },
+    {
+      "shoeId": "asics-gel-kayano-31",
+      "rank": 3,
+      "bannerType": "alt",
+      "bannerLabel": "For stability seekers",
+      "verdict": "If your ankles roll inward or you finish runs with knee niggles, this is the one. Gentle stability that holds you together at mile 20 — without ever feeling corrective.",
+      "whyThisWorks": "The structured ride catches your stride when fatigue creeps in — the difference between cramping at km 32 and finishing strong.",
+      "features": [
+        { "label": "Gentle stability", "positive": true },
+        { "label": "4D Guidance", "positive": true },
+        { "label": "Heavier shoe", "positive": false }
+      ],
+      "realTalkTags": ["Gentle stability", "Mile-20 hero", "Knee-saver"],
+      "tags": ["Stability", "🧠 Running Smart"],
+      "priceTier": "£££",
+      "priceChecked": "Checked 16 May",
+      "rideFeel": { "cushion": 86, "response": 55, "stability": 92 }
+    }
+  ],
+  "editorialTitle": "What actually matters in your first marathon shoe",
+  "editorialTitleItalic": "(it's not what you think)",
+  "editorialBody": "Here's the secret nobody selling shoes wants to tell you: the difference between a £140 daily trainer and a £270 carbon super-shoe matters way less in your first marathon than the difference between running 30 kilometres a week and 40.\n\nFor a first-time marathoner, the shoe's job is small and specific. It needs to be comfortable enough that you keep showing up. Durable enough to absorb a few hundred kilometres of training. Forgiving enough on the days your form is held together by caffeine and stubbornness. That's it. That's the whole job.\n\nYou don't need carbon. You don't need PEBA foam. You don't need a rotation. You need one shoe that you'll happily lace up tomorrow morning when it's drizzling and you'd rather not. The shoes on this page do that better than the £270 ones for one good reason — you'll wear them more.",
+  "editorialAttribution": "— Ashley, on her fourth pair of Pegasuses",
+  "faqIntro": "Things first-time marathoners actually ask Ashley after club runs",
+  "faqs": [
+    { "question": "Should I buy race shoes for my first marathon?", "answer": "Honestly? No. Carbon-plated super-shoes give you a few percent at goal pace, and a few percent of a 5:00 hour PB is a lot less than the comfort you'd gain by spending the same money on a really good daily trainer. Run your first marathon in something forgiving; chase carbon for marathon two." },
+    { "question": "How much should I spend on my first marathon shoe?", "answer": "£130–£150 is the sweet spot. Below that, you're often getting older foams that fade fast; above that, you're paying for race-day tech you don't yet need. The shoes on this page are all in that range or just above for a reason." },
+    { "question": "Is a heavier shoe bad for marathon running?", "answer": "Not for your first one. Every 100g of shoe weight adds roughly 1% to energy cost — meaningful if you're racing under 3 hours, basically irrelevant for a first marathon at 4–5 hours. A heavier shoe that protects your legs through 30km/week of training is a far better trade." },
+    { "question": "How do I know when my marathon shoes need replacing?", "answer": "Two signs: the ride goes flat (foam compresses long before the upper falls apart), and old niggles start coming back. Most daily trainers last 500–800km depending on your weight and the surface. Track the kilometres — if you're past 600 and rolling into race day, get a new pair four weeks out and break them in." }
+  ],
+  "siblingSpokes": [
+    { "title": "Best marathon shoes for wide feet", "description": "For runners whose feet swell on long runs or who need extra toe box room.", "url": "#" },
+    { "title": "Best marathon shoes under £150", "description": "Training seriously without breaking the bank — the shoes that deliver most value.", "url": "#" },
+    { "title": "Best stability marathon shoes", "description": "For overpronators and runners dealing with knee or hip niggles.", "url": "#" }
+  ],
+  "comparisonTable": {
+    "title": "The short version",
+    "subtitle": "Five columns. No specs you don't need.",
+    "rows": [
+      { "brand": "Nike", "name": "Pegasus 41", "price": "£134", "cushioning": "Medium", "weight": "285g", "bestFor": "Your default first marathon shoe", "whyWePicked": "Reliable, friendly, gets the job done." },
+      { "brand": "Brooks", "name": "Ghost 16", "price": "£130", "cushioning": "Medium-high", "weight": "290g", "bestFor": "Comfort-first runners, wider feet", "whyWePicked": "Plush enough you forget the shoe is there." },
+      { "brand": "Asics", "name": "Gel-Kayano 31", "price": "£180", "cushioning": "High", "weight": "295g", "bestFor": "Overpronators, knee niggles, late-marathon fade", "whyWePicked": "Holds you together when fatigue arrives." }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+[
+  { "id": "new-runner", "label": "New Runner", "emoji": "🌱" },
+  { "id": "parkrunner", "label": "Parkrunner", "emoji": "🌳" },
+  { "id": "race-trainer", "label": "Race Trainer", "emoji": "🏅" },
+  { "id": "pb-chaser", "label": "PB Chaser", "emoji": "⚡" },
+  { "id": "trail-runner", "label": "Trail Runner", "emoji": "🏔️" },
+  { "id": "running-smart", "label": "Running Smart", "emoji": "🧠" }
+]

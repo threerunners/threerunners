@@ -1,0 +1,119 @@
+{
+  "id": "marathon",
+  "slug": "marathon",
+  "pillarType": "distance",
+  "title": "Best Marathon Running Shoes",
+  "subtitle": "The best marathon shoe depends on whether you're training, racing, or both. Start with a reliable daily trainer — add specialist shoes as your training evolves.",
+  "metaTitle": "Best Marathon Running Shoes 2026 | The Run Down",
+  "metaDescription": "Expert-tested marathon shoe recommendations for every runner type. Compare race-day carbon shoes, daily trainers, and stability options. Updated May 2026.",
+  "canonicalUrl": "/marathon",
+  "lastUpdated": "2026-05-24",
+  "personasShown": ["new-runner", "parkrunner", "race-trainer", "pb-chaser", "trail-runner", "running-smart"],
+  "defaultPersona": "race-trainer",
+  "subNavTabs": [
+    { "label": "Race Day Shoes", "filterKey": "race-day" },
+    { "label": "Tempo Shoes", "filterKey": "tempo" },
+    { "label": "Daily Trainers", "filterKey": "daily-trainer" },
+    { "label": "Long Run Shoes", "filterKey": "long-run" },
+    { "label": "Stability Shoes", "filterKey": "stability" }
+  ],
+  "whoThisIsFor": "This page is for runners training for or racing a marathon — whether you're building your first base or chasing a sub-3 PB. We cover the full shoe rotation: race-day carbon, tempo trainers, and the reliable workhorses that absorb your weekly mileage. If you're just starting out and only want one shoe, go straight to the beginners' guide.",
+  "editorialBoxes": [
+    {
+      "icon": "cushion",
+      "heading": "Cushion vs Speed: What actually matters for a marathon?",
+      "body": "At 42.2km, foam quality starts to matter more than weight. The sweet spot for most marathoners is a high-stack daily trainer for the bulk of training, plus a carbon race shoe for races and key sessions. Don't race in a shoe you haven't trained in."
+    },
+    {
+      "icon": "spec",
+      "heading": "How to read a shoe spec sheet",
+      "body": "Weight, drop, stack height, and foam type are the four numbers that matter most. PEBA-based foams (ZoomX, PWRRUN HG, Lightstrike Pro) significantly outperform older EVA foams for energy return. Drop affects foot strike and calf load. Stack height affects cushion and stability."
+    },
+    {
+      "icon": "profile",
+      "heading": "How your runner profile shapes your choice",
+      "body": "A new runner needs forgiveness and confidence — a plush neutral trainer with no plate. A PB chaser needs precision — a race-ready carbon shoe with a fast training companion. Your profile is the foundation of a smart shoe rotation."
+    }
+  ],
+  "findYourFitCategories": [
+    {
+      "heading": "💰 Budget picks (under £150)",
+      "subheading": "You don't need to spend £200+ to run a great marathon. These deliver serious value.",
+      "entries": [
+        { "label": "Nike Pegasus 41", "sublabel": "Best all-rounder, under £149", "price": "from £134", "url": "#" },
+        { "label": "Brooks Ghost 16", "sublabel": "Smoothest ride for the money", "price": "from £130", "url": "#" },
+        { "label": "Saucony Endorphin Speed 4", "sublabel": "Best value fast shoe", "price": "from £145", "url": "#" },
+        { "label": "Hoka Clifton 9", "sublabel": "Max cushion at a fair price", "price": "from £140", "url": "#" }
+      ]
+    },
+    {
+      "heading": "📐 Wide fit picks",
+      "subheading": "Shoes with wider lasts — essential for avoiding black toenails and blisters.",
+      "entries": [
+        { "label": "Brooks Ghost 16", "sublabel": "Available in B, D, 2E widths", "url": "#" },
+        { "label": "New Balance Fresh Foam X 1080v14", "sublabel": "Wide (2E) and Extra Wide (4E)", "url": "#" },
+        { "label": "Asics Gel-Nimbus 26", "sublabel": "Wider upper for long runs", "url": "#" },
+        { "label": "Hoka Bondi 8", "sublabel": "Wider platform, extra toe box room", "url": "#" }
+      ]
+    }
+  ],
+  "comparisonTableColumns": ["shoe", "bestFor", "runnerType", "cushion", "weight", "drop", "carbon", "price", "cta"],
+  "shoeRecommendations": [
+    {
+      "shoeId": "nike-alphafly-3",
+      "bannerType": "top",
+      "bannerLabel": "Our top pick for you",
+      "whyThisWorks": "With your training base, the Alphafly 3 helps convert fitness into pace — the foam and geometry reward your consistent effort.",
+      "features": [
+        { "label": "Carbon plate", "positive": true },
+        { "label": "Race ready", "positive": true },
+        { "label": "Not for training", "positive": false }
+      ],
+      "tags": ["Race day", "Neutral runner"],
+      "rideFeel": { "cushion": 96, "response": 92, "stability": 55 }
+    },
+    {
+      "shoeId": "saucony-endorphin-elite",
+      "bannerType": "alt",
+      "bannerLabel": "Editor's choice",
+      "whyThisWorks": "The Endorphin Elite's precision foam rewards experienced pacing — a natural fit for structured marathon training.",
+      "features": [
+        { "label": "Versatile", "positive": true },
+        { "label": "Carbon plate", "positive": true }
+      ],
+      "tags": ["Race day", "Any foot type"],
+      "rideFeel": { "cushion": 82, "response": 88, "stability": 60 }
+    },
+    {
+      "shoeId": "asics-metaspeed-edge-paris",
+      "bannerType": "alt",
+      "bannerLabel": "Best value",
+      "whyThisWorks": "For cadence-focused runners, the Metaspeed Edge Paris delivers carbon-plate performance at a lower price point.",
+      "features": [
+        { "label": "Versatile", "positive": true },
+        { "label": "Carbon plate", "positive": true }
+      ],
+      "tags": ["Race day", "High cadence"],
+      "rideFeel": { "cushion": 72, "response": 90, "stability": 65 }
+    }
+  ],
+  "comparisonRows": [
+    { "shoeId": "nike-alphafly-3", "bestFor": "Race day", "runnerType": "Neutral runner", "cushion": "Very High", "weight": "210g", "drop": "4mm", "carbon": true, "priceTier": "££££" },
+    { "shoeId": "saucony-endorphin-elite", "bestFor": "Daily training", "runnerType": "Any foot type", "cushion": "Medium", "weight": "188g", "drop": "8mm", "carbon": true, "priceTier": "££££" },
+    { "shoeId": "asics-metaspeed-edge-paris", "bestFor": "Daily training", "runnerType": "Any foot type", "cushion": "Medium", "weight": "195g", "drop": "5mm", "carbon": true, "priceTier": "£££" }
+  ],
+  "faqs": [
+    { "question": "Do I need different shoes for training and race day?", "answer": "Short answer: yes, if you're targeting a time. Race shoes use carbon plates and exotic foams that excel for a handful of marathons before degrading; training shoes are built to absorb hundreds of kilometres. Rotating both extends the life of your race pair and builds stronger legs." },
+    { "question": "Are carbon plated shoes worth it for beginners?", "answer": "For a first marathon, probably not. The benefit is real but small, and the stiff ride can amplify form issues over 42.2km. Spend the money on a forgiving, well-cushioned trainer and a structured plan instead." },
+    { "question": "How often should I replace my marathon shoes?", "answer": "Training shoes: 500–800km depending on weight and surface. Race shoes: 200–400km — foam compression and plate fatigue come well before visible wear." },
+    { "question": "What's the difference between a stability and neutral marathon shoe?", "answer": "Stability shoes guide the foot against excess inward roll (overpronation) using firmer foam on the medial side or a guide rail. Neutral shoes let the foot move naturally. Most runners are neutral; if you're not sure, you probably are." }
+  ],
+  "author": "ashley-morgan",
+  "exploreLinks": [
+    { "label": "Race Day Shoes", "url": "#" },
+    { "label": "Tempo Shoes", "url": "#" },
+    { "label": "Daily Trainers", "url": "#" },
+    { "label": "Long Run Shoes", "url": "#" },
+    { "label": "Stability Shoes", "url": "#" }
+  ]
+}
