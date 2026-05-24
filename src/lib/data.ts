@@ -15,8 +15,9 @@ import shoesData from '@/data/shoes.json'
 import pricingData from '@/data/pricing.json'
 import affiliatesData from '@/data/affiliates.json'
 import personasData from '@/data/personas.json'
+import goalsData from '@/data/goals.json'
 import type { Shoe, ShoePricing, ShoeAffiliates } from '@/types/shoe'
-import type { Persona } from '@/types/cms'
+import type { Persona, Goal } from '@/types/cms'
 
 export function getShoe(id: string): Shoe | undefined {
   return (shoesData as Shoe[]).find(s => s.id === id)
@@ -36,6 +37,10 @@ export function getShoeAffiliates(shoeId: string): ShoeAffiliates | undefined {
 
 export function getPersonas(): Persona[] {
   return personasData as Persona[]
+}
+
+export function getGoals(): Goal[] {
+  return goalsData as Goal[]
 }
 
 export function getBestAffiliateUrl(shoeId: string): string {

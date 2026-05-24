@@ -1,8 +1,8 @@
 [
-  { "id": "new-runner", "label": "New Runner", "emoji": "🌱" },
-  { "id": "parkrunner", "label": "Parkrunner", "emoji": "🌳" },
-  { "id": "race-trainer", "label": "Race Trainer", "emoji": "🏅" },
-  { "id": "pb-chaser", "label": "PB Chaser", "emoji": "⚡" },
-  { "id": "trail-runner", "label": "Trail Runner", "emoji": "🏔️" },
-  { "id": "running-smart", "label": "Running Smart", "emoji": "🧠" }
+  { "id": "new-runner",     "label": "New Runner",        "emoji": "🌱", "description": "Just starting out — building base mileage and finding what works" },
+  { "id": "parkrunner",     "label": "Weekly Park Runner", "emoji": "🌳", "description": "Parkrun regular — consistent 20–30km/week, social runner at heart" },
+  { "id": "race-trainer",   "label": "Regular Runner",     "emoji": "🏃", "description": "25–40km/week across mixed sessions and surfaces" },
+  { "id": "pb-chaser",      "label": "PB Chaser",          "emoji": "⚡", "description": "Structured training with a time goal — every session is purposeful" },
+  { "id": "trail-runner",   "label": "Long Run Runner",    "emoji": "🏔️", "description": "40km+ weeks — the long run is the highlight of the week" },
+  { "id": "running-smart",  "label": "Running Smart",      "emoji": "🧠", "description": "Balancing training with life — consistent, injury-aware, patient" }
 ]

@@ -2,6 +2,12 @@ export interface Persona {
   id: string
   label: string
   emoji: string
+  description?: string
+}
+
+export interface Goal {
+  id: string
+  label: string
 }
 
 export interface SubNavTab {

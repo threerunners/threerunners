@@ -1,0 +1,7 @@
+[
+  { "id": "finish-comfortably", "label": "Finish comfortably" },
+  { "id": "improve-pace",       "label": "Improve pace" },
+  { "id": "hit-pb",             "label": "Hit PB" },
+  { "id": "long-distance",      "label": "Long distance endurance" },
+  { "id": "race-day",           "label": "Race day performance" }
+]

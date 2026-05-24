@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
-import { getShoe, getPersonas, getBestAffiliateUrl, getBestPrice } from '@/lib/data'
+import { getShoe, getPersonas, getGoals, getBestAffiliateUrl, getBestPrice } from '@/lib/data'
 import hubData from '@/data/pages/marathon-hub.json'
 import authorData from '@/data/authors/ashley-morgan.json'
 import type { HubPageData, HubShoeRecommendation } from '@/types/cms'
 import type { Author } from '@/types/author'
 import BreadcrumbNav from '@/components/shared/BreadcrumbNav'
-import PersonaBar from '@/components/shared/PersonaBar'
+import FindMyShoe from '@/components/hub/FindMyShoe'
 import SubNavTabs from '@/components/hub/SubNavTabs'
 import ShoeCard from '@/components/shared/ShoeCard'
 import EditorialBoxes from '@/components/hub/EditorialBoxes'
@@ -35,6 +35,7 @@ const jsonLd = {
 
 export default function MarathonHubPage() {
   const personas = getPersonas().filter(p => page.personasShown.includes(p.id))
+  const goals = getGoals()
 
   const shoeCards = (page.shoeRecommendations as HubShoeRecommendation[]).map(rec => {
     const shoe = getShoe(rec.shoeId)!
@@ -74,7 +75,7 @@ export default function MarathonHubPage() {
           </p>
         </div>
 
-        <PersonaBar personas={personas} defaultPersona={page.defaultPersona} />
+        <FindMyShoe personas={personas} goals={goals} defaultPersona={page.defaultPersona} />
 
         <SubNavTabs tabs={page.subNavTabs} />
 
