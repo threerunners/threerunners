@@ -77,5 +77,271 @@
         "lastUpdated": "2026-01-01"
       }
     ]
+  },
+  {
+    "shoeId": "nike-vaporfly-3",
+    "links": [
+      {
+        "retailerId": "nike-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.07,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      }
+    ]
+  },
+  {
+    "shoeId": "adidas-adios-pro-4",
+    "links": [
+      {
+        "retailerId": "adidas-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      },
+      {
+        "retailerId": "start-fitness",
+        "affiliateUrl": "#",
+        "commissionRate": 0.07,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      }
+    ]
+  },
+  {
+    "shoeId": "saucony-endorphin-speed-4",
+    "links": [
+      {
+        "retailerId": "saucony-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.07,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      }
+    ]
+  },
+  {
+    "shoeId": "asics-superblast-2",
+    "links": [
+      {
+        "retailerId": "asics-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.07,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      }
+    ]
+  },
+  {
+    "shoeId": "new-balance-1080v14",
+    "links": [
+      {
+        "retailerId": "new-balance-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.07,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      }
+    ]
+  },
+  {
+    "shoeId": "hoka-rocket-x-2",
+    "links": [
+      {
+        "retailerId": "hoka-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.07,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      }
+    ]
+  },
+  {
+    "shoeId": "hoka-mach-6",
+    "links": [
+      {
+        "retailerId": "hoka-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.07,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      }
+    ]
+  },
+  {
+    "shoeId": "hoka-clifton-9",
+    "links": [
+      {
+        "retailerId": "hoka-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.07,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      }
+    ]
+  },
+  {
+    "shoeId": "on-cloudboom-echo-3",
+    "links": [
+      {
+        "retailerId": "on-running-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.07,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      }
+    ]
+  },
+  {
+    "shoeId": "on-cloudmonster-2",
+    "links": [
+      {
+        "retailerId": "on-running-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.07,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      }
+    ]
+  },
+  {
+    "shoeId": "asics-novablast-4",
+    "links": [
+      {
+        "retailerId": "asics-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.07,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      }
+    ]
+  },
+  {
+    "shoeId": "asics-gel-nimbus-26",
+    "links": [
+      {
+        "retailerId": "asics-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.07,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      }
+    ]
+  },
+  {
+    "shoeId": "brooks-hyperion-max-2",
+    "links": [
+      {
+        "retailerId": "brooks-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.07,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      }
+    ]
+  },
+  {
+    "shoeId": "new-balance-sc-elite-v4",
+    "links": [
+      {
+        "retailerId": "new-balance-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.06,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "affiliateUrl": "#",
+        "commissionRate": 0.07,
+        "programStatus": "active",
+        "lastUpdated": "2026-05-25"
+      }
+    ]
   }
 ]

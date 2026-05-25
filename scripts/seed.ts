@@ -9,6 +9,7 @@ import { createClient } from '@libsql/client'
 import { pbkdf2Sync, randomBytes } from 'crypto'
 import { readFileSync } from 'fs'
 import { join } from 'path'
+import type { PersonaRecs } from '../src/types/recs'
 
 const db = createClient({
   url: process.env.TURSO_DATABASE_URL!,
@@ -137,6 +138,16 @@ async function main() {
     })
   }
   console.log(`✓ ${configs.length} config entries seeded`)
+
+  // ── Page recs (marathon) — INSERT OR IGNORE to preserve admin edits ──────
+  const marathonRecs = readJson('page-recs/marathon.json') as PersonaRecs[]
+  for (const rec of marathonRecs) {
+    await db.execute({
+      sql: 'INSERT OR IGNORE INTO page_recs (page_id, persona_id, trainer_type, data) VALUES (?, ?, ?, ?)',
+      args: ['marathon', rec.personaId, rec.trainerType, JSON.stringify(rec)],
+    })
+  }
+  console.log(`✓ ${marathonRecs.length} marathon page_recs seeded (INSERT OR IGNORE)`)
 
   // ── Initial admin user ────────────────────────────────────────────────────
   const username = process.env.INITIAL_ADMIN_USERNAME || 'admin'

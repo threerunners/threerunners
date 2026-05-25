@@ -107,5 +107,383 @@
         ]
       }
     ]
+  },
+  {
+    "shoeId": "nike-vaporfly-3",
+    "retailers": [
+      {
+        "retailerId": "nike-uk",
+        "retailerName": "Nike",
+        "currentPrice": 234.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 234.95, "date": "2026-05-01" }
+        ]
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "retailerName": "Running Warehouse UK",
+        "currentPrice": 229.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 229.95, "date": "2026-05-01" }
+        ]
+      }
+    ]
+  },
+  {
+    "shoeId": "adidas-adios-pro-4",
+    "retailers": [
+      {
+        "retailerId": "adidas-uk",
+        "retailerName": "Adidas",
+        "currentPrice": 219.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 219.95, "date": "2026-05-01" }
+        ]
+      },
+      {
+        "retailerId": "start-fitness",
+        "retailerName": "Start Fitness",
+        "currentPrice": 199.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 199.95, "date": "2026-05-01" }
+        ]
+      }
+    ]
+  },
+  {
+    "shoeId": "saucony-endorphin-speed-4",
+    "retailers": [
+      {
+        "retailerId": "saucony-uk",
+        "retailerName": "Saucony",
+        "currentPrice": 159.99,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 159.99, "date": "2026-05-01" }
+        ]
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "retailerName": "Running Warehouse UK",
+        "currentPrice": 149.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 149.95, "date": "2026-05-01" }
+        ]
+      }
+    ]
+  },
+  {
+    "shoeId": "asics-superblast-2",
+    "retailers": [
+      {
+        "retailerId": "asics-uk",
+        "retailerName": "Asics",
+        "currentPrice": 199.99,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 199.99, "date": "2026-05-01" }
+        ]
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "retailerName": "Running Warehouse UK",
+        "currentPrice": 189.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 189.95, "date": "2026-05-01" }
+        ]
+      }
+    ]
+  },
+  {
+    "shoeId": "new-balance-1080v14",
+    "retailers": [
+      {
+        "retailerId": "new-balance-uk",
+        "retailerName": "New Balance",
+        "currentPrice": 164.99,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 164.99, "date": "2026-05-01" }
+        ]
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "retailerName": "Running Warehouse UK",
+        "currentPrice": 154.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 154.95, "date": "2026-05-01" }
+        ]
+      }
+    ]
+  },
+  {
+    "shoeId": "hoka-rocket-x-2",
+    "retailers": [
+      {
+        "retailerId": "hoka-uk",
+        "retailerName": "Hoka",
+        "currentPrice": 230.00,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 230.00, "date": "2026-05-01" }
+        ]
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "retailerName": "Running Warehouse UK",
+        "currentPrice": 219.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 219.95, "date": "2026-05-01" }
+        ]
+      }
+    ]
+  },
+  {
+    "shoeId": "hoka-mach-6",
+    "retailers": [
+      {
+        "retailerId": "hoka-uk",
+        "retailerName": "Hoka",
+        "currentPrice": 140.00,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 140.00, "date": "2026-05-01" }
+        ]
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "retailerName": "Running Warehouse UK",
+        "currentPrice": 129.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 129.95, "date": "2026-05-01" }
+        ]
+      }
+    ]
+  },
+  {
+    "shoeId": "hoka-clifton-9",
+    "retailers": [
+      {
+        "retailerId": "hoka-uk",
+        "retailerName": "Hoka",
+        "currentPrice": 130.00,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 130.00, "date": "2026-05-01" }
+        ]
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "retailerName": "Running Warehouse UK",
+        "currentPrice": 119.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 119.95, "date": "2026-05-01" }
+        ]
+      }
+    ]
+  },
+  {
+    "shoeId": "on-cloudboom-echo-3",
+    "retailers": [
+      {
+        "retailerId": "on-running-uk",
+        "retailerName": "On Running",
+        "currentPrice": 260.00,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 260.00, "date": "2026-05-01" }
+        ]
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "retailerName": "Running Warehouse UK",
+        "currentPrice": 249.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 249.95, "date": "2026-05-01" }
+        ]
+      }
+    ]
+  },
+  {
+    "shoeId": "on-cloudmonster-2",
+    "retailers": [
+      {
+        "retailerId": "on-running-uk",
+        "retailerName": "On Running",
+        "currentPrice": 170.00,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 170.00, "date": "2026-05-01" }
+        ]
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "retailerName": "Running Warehouse UK",
+        "currentPrice": 159.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 159.95, "date": "2026-05-01" }
+        ]
+      }
+    ]
+  },
+  {
+    "shoeId": "asics-novablast-4",
+    "retailers": [
+      {
+        "retailerId": "asics-uk",
+        "retailerName": "Asics",
+        "currentPrice": 140.00,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 140.00, "date": "2026-05-01" }
+        ]
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "retailerName": "Running Warehouse UK",
+        "currentPrice": 129.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 129.95, "date": "2026-05-01" }
+        ]
+      }
+    ]
+  },
+  {
+    "shoeId": "asics-gel-nimbus-26",
+    "retailers": [
+      {
+        "retailerId": "asics-uk",
+        "retailerName": "Asics",
+        "currentPrice": 160.00,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 160.00, "date": "2026-05-01" }
+        ]
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "retailerName": "Running Warehouse UK",
+        "currentPrice": 149.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 149.95, "date": "2026-05-01" }
+        ]
+      }
+    ]
+  },
+  {
+    "shoeId": "brooks-hyperion-max-2",
+    "retailers": [
+      {
+        "retailerId": "brooks-uk",
+        "retailerName": "Brooks",
+        "currentPrice": 150.00,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 150.00, "date": "2026-05-01" }
+        ]
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "retailerName": "Running Warehouse UK",
+        "currentPrice": 139.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 139.95, "date": "2026-05-01" }
+        ]
+      }
+    ]
+  },
+  {
+    "shoeId": "new-balance-sc-elite-v4",
+    "retailers": [
+      {
+        "retailerId": "new-balance-uk",
+        "retailerName": "New Balance",
+        "currentPrice": 220.00,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 220.00, "date": "2026-05-01" }
+        ]
+      },
+      {
+        "retailerId": "running-warehouse-uk",
+        "retailerName": "Running Warehouse UK",
+        "currentPrice": 209.95,
+        "currency": "GBP",
+        "inStock": true,
+        "lastChecked": "2026-05-25",
+        "priceHistory": [
+          { "price": 209.95, "date": "2026-05-01" }
+        ]
+      }
+    ]
   }
 ]

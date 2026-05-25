@@ -1,0 +1,1028 @@
+[
+  {
+    "personaId": "new-runner",
+    "trainerType": "daily-trainer",
+    "picks": [
+      {
+        "shoeId": "hoka-clifton-9",
+        "bannerLabel": "Top pick",
+        "whyThisWorks": "The Clifton 9 is the most approachable daily trainer for marathon newbies — soft enough to protect your legs through high-mileage weeks, forgiving enough that early form mistakes don't punish you.",
+        "features": [
+          { "label": "Protective cushioning", "positive": true },
+          { "label": "Beginner-friendly geometry", "positive": true },
+          { "label": "Not the fastest shoe", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 9,
+          "improve-pace": 3,
+          "hit-pb": 1,
+          "long-distance": 8,
+          "race-day": 2
+        }
+      },
+      {
+        "shoeId": "asics-gel-nimbus-26",
+        "bannerLabel": "Max protection",
+        "whyThisWorks": "The Nimbus 26 is Asics' most cushioned shoe — built for high-mileage training blocks where leg protection matters more than speed.",
+        "features": [
+          { "label": "Maximum stack height", "positive": true },
+          { "label": "Wide width options", "positive": true },
+          { "label": "Heaviest in class", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 10,
+          "improve-pace": 2,
+          "hit-pb": 1,
+          "long-distance": 9,
+          "race-day": 1
+        }
+      },
+      {
+        "shoeId": "new-balance-1080v14",
+        "bannerLabel": "Plush trainer",
+        "whyThisWorks": "The 1080v14's Fresh Foam X delivers pillow-soft cushioning across multiple widths — great for new runners who need a little extra comfort and support.",
+        "features": [
+          { "label": "Available in 4 widths", "positive": true },
+          { "label": "Plush long-run feel", "positive": true },
+          { "label": "Not built for speed", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 9,
+          "improve-pace": 3,
+          "hit-pb": 1,
+          "long-distance": 8,
+          "race-day": 1
+        }
+      }
+    ]
+  },
+  {
+    "personaId": "new-runner",
+    "trainerType": "tempo",
+    "picks": [
+      {
+        "shoeId": "saucony-endorphin-speed-4",
+        "bannerLabel": "Top pick",
+        "whyThisWorks": "The Endorphin Speed 4's nylon SpeedRoll plate makes tempo runs feel effortless without the intimidating price of carbon. New runners will notice the difference immediately.",
+        "features": [
+          { "label": "Nylon plate for propulsion", "positive": true },
+          { "label": "Can train in it daily", "positive": true },
+          { "label": "Less cushion than a daily trainer", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 5,
+          "improve-pace": 9,
+          "hit-pb": 5,
+          "long-distance": 5,
+          "race-day": 4
+        }
+      },
+      {
+        "shoeId": "asics-novablast-4",
+        "bannerLabel": "Bouncy all-rounder",
+        "whyThisWorks": "The Novablast 4's FF Blast+ foam sits between a daily trainer and a tempo shoe — bouncy enough to feel fast, cushioned enough for longer runs.",
+        "features": [
+          { "label": "High stack + bouncy foam", "positive": true },
+          { "label": "Versatile trainer-to-tempo", "positive": true },
+          { "label": "Slightly heavier than pure tempo shoes", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 6,
+          "improve-pace": 8,
+          "hit-pb": 4,
+          "long-distance": 6,
+          "race-day": 3
+        }
+      },
+      {
+        "shoeId": "hoka-mach-6",
+        "bannerLabel": "Lightweight option",
+        "whyThisWorks": "The Mach 6 is one of Hoka's lightest plated trainers — a nylon plate adds snap without the weight penalty of a full carbon racer.",
+        "features": [
+          { "label": "Light for a plated shoe", "positive": true },
+          { "label": "Hoka's signature cushion underfoot", "positive": true },
+          { "label": "Only one width option", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 5,
+          "improve-pace": 8,
+          "hit-pb": 4,
+          "long-distance": 5,
+          "race-day": 4
+        }
+      }
+    ]
+  },
+  {
+    "personaId": "new-runner",
+    "trainerType": "race-day",
+    "picks": [
+      {
+        "shoeId": "nike-vaporfly-3",
+        "bannerLabel": "Top pick",
+        "whyThisWorks": "The Vaporfly 3 is more forgiving than the Alphafly — a smart first carbon shoe for newer runners ready to race. The ZoomX foam cushions the impact while the plate propels you forward.",
+        "features": [
+          { "label": "Most forgiving super shoe", "positive": true },
+          { "label": "Proven marathon performer", "positive": true },
+          { "label": "Expensive for a first race shoe", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 4,
+          "improve-pace": 8,
+          "hit-pb": 8,
+          "long-distance": 4,
+          "race-day": 9
+        }
+      },
+      {
+        "shoeId": "asics-metaspeed-edge-paris",
+        "bannerLabel": "Cadence focused",
+        "whyThisWorks": "If you have a naturally quick cadence, the Metaspeed Edge Paris rewards it — lighter and more efficient than many supershoes for runners with faster turnover.",
+        "features": [
+          { "label": "Great for quick strides", "positive": true },
+          { "label": "Lighter than most carbon shoes", "positive": true },
+          { "label": "Less suited to heel strikers", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 3,
+          "improve-pace": 7,
+          "hit-pb": 7,
+          "long-distance": 3,
+          "race-day": 8
+        }
+      },
+      {
+        "shoeId": "saucony-endorphin-elite",
+        "bannerLabel": "Smooth and precise",
+        "whyThisWorks": "The Endorphin Elite's PWRRUN HG foam delivers a smooth, consistent ride. A good entry-point carbon shoe for newer runners who want race-day energy return.",
+        "features": [
+          { "label": "PWRRUN HG carbon shoe", "positive": true },
+          { "label": "Smooth heel-to-toe transition", "positive": true },
+          { "label": "Rewards efficient form", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 4,
+          "improve-pace": 7,
+          "hit-pb": 8,
+          "long-distance": 3,
+          "race-day": 8
+        }
+      }
+    ]
+  },
+  {
+    "personaId": "parkrunner",
+    "trainerType": "daily-trainer",
+    "picks": [
+      {
+        "shoeId": "asics-superblast-2",
+        "bannerLabel": "Top pick",
+        "whyThisWorks": "The Superblast 2 is the ultimate do-it-all shoe for parkrunners stepping up to marathons — bouncy FF Blast+ foam that works on easy days AND can race.",
+        "features": [
+          { "label": "Race-grade foam, no carbon premium", "positive": true },
+          { "label": "Can go from easy runs to race day", "positive": true },
+          { "label": "Quite high stack (takes getting used to)", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 7,
+          "improve-pace": 7,
+          "hit-pb": 5,
+          "long-distance": 8,
+          "race-day": 5
+        }
+      },
+      {
+        "shoeId": "hoka-clifton-9",
+        "bannerLabel": "Comfort daily",
+        "whyThisWorks": "Parkrunners doing their first marathon training blocks love the Clifton 9 — soft and forgiving on easy days, which is exactly what you need at higher weekly mileage.",
+        "features": [
+          { "label": "Plush cushioning for long runs", "positive": true },
+          { "label": "Beginner and experienced friendly", "positive": true },
+          { "label": "Not versatile enough for speed work", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 9,
+          "improve-pace": 3,
+          "hit-pb": 2,
+          "long-distance": 8,
+          "race-day": 2
+        }
+      },
+      {
+        "shoeId": "new-balance-1080v14",
+        "bannerLabel": "Wide width option",
+        "whyThisWorks": "The 1080v14 works brilliantly for parkrunners who've moved up to marathon training and need a plush, wide-fitting daily trainer for high mileage weeks.",
+        "features": [
+          { "label": "4 widths available", "positive": true },
+          { "label": "Exceptional daily comfort", "positive": true },
+          { "label": "Not the best for speed sessions", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 9,
+          "improve-pace": 3,
+          "hit-pb": 1,
+          "long-distance": 8,
+          "race-day": 1
+        }
+      }
+    ]
+  },
+  {
+    "personaId": "parkrunner",
+    "trainerType": "tempo",
+    "picks": [
+      {
+        "shoeId": "saucony-endorphin-speed-4",
+        "bannerLabel": "Top pick",
+        "whyThisWorks": "Parkrunners thrive in the Endorphin Speed 4 — the nylon plate adds the snap you're used to from racing parkrun, making tempo marathon sessions feel natural.",
+        "features": [
+          { "label": "Nylon plate for race-like feel", "positive": true },
+          { "label": "Durable enough for daily training", "positive": true },
+          { "label": "Less cushioned than pure trainers", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 4,
+          "improve-pace": 9,
+          "hit-pb": 6,
+          "long-distance": 5,
+          "race-day": 5
+        }
+      },
+      {
+        "shoeId": "hoka-mach-6",
+        "bannerLabel": "Light and bouncy",
+        "whyThisWorks": "The Mach 6 brings Hoka's signature cushion to a proper tempo shoe — light enough to feel fast, soft enough to not beat you up on back-to-back run days.",
+        "features": [
+          { "label": "Light with Hoka cushion", "positive": true },
+          { "label": "Great for marathon pace sessions", "positive": true },
+          { "label": "Standard width only", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 4,
+          "improve-pace": 8,
+          "hit-pb": 5,
+          "long-distance": 5,
+          "race-day": 5
+        }
+      },
+      {
+        "shoeId": "asics-novablast-4",
+        "bannerLabel": "Versatile bouncer",
+        "whyThisWorks": "The Novablast 4's FF Blast+ foam has enough pop for marathon tempo work and enough cushion for longer sessions — a great second shoe for parkrunners.",
+        "features": [
+          { "label": "Bouncy foam for tempo efforts", "positive": true },
+          { "label": "Wide option available", "positive": true },
+          { "label": "Slightly heavier than pure tempo shoes", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 5,
+          "improve-pace": 7,
+          "hit-pb": 4,
+          "long-distance": 6,
+          "race-day": 4
+        }
+      }
+    ]
+  },
+  {
+    "personaId": "parkrunner",
+    "trainerType": "race-day",
+    "picks": [
+      {
+        "shoeId": "nike-vaporfly-3",
+        "bannerLabel": "Top pick",
+        "whyThisWorks": "Parkrunners who've built their speed know how to use a carbon shoe. The Vaporfly 3 is the benchmark — lighter and more forgiving than the Alphafly, with the same race-winning ZoomX foam.",
+        "features": [
+          { "label": "Lightest in its class (184g)", "positive": true },
+          { "label": "ZoomX foam + carbon plate", "positive": true },
+          { "label": "Race-day only durability", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 3,
+          "improve-pace": 8,
+          "hit-pb": 9,
+          "long-distance": 3,
+          "race-day": 10
+        }
+      },
+      {
+        "shoeId": "adidas-adios-pro-4",
+        "bannerLabel": "Stable carbon",
+        "whyThisWorks": "The Adios Pro 4's Energy Rods system delivers a uniquely stable carbon shoe experience — perfect for parkrunners who want race-day propulsion without the wobbly feel of other supershoes.",
+        "features": [
+          { "label": "Most stable super shoe", "positive": true },
+          { "label": "Energy Rods unique propulsion", "positive": true },
+          { "label": "Different feel than foam-only plates", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 4,
+          "improve-pace": 8,
+          "hit-pb": 9,
+          "long-distance": 3,
+          "race-day": 9
+        }
+      },
+      {
+        "shoeId": "hoka-rocket-x-2",
+        "bannerLabel": "Hoka's fastest",
+        "whyThisWorks": "Hoka fans will feel at home in the Rocket X 2 — it's the brand's fastest shoe, with PEBA foam and a carbon plate that delivers serious race-day performance.",
+        "features": [
+          { "label": "PEBA foam carbon shoe", "positive": true },
+          { "label": "Familiar Hoka geometry", "positive": true },
+          { "label": "Pricier than training Hoka options", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 3,
+          "improve-pace": 7,
+          "hit-pb": 8,
+          "long-distance": 3,
+          "race-day": 9
+        }
+      }
+    ]
+  },
+  {
+    "personaId": "race-trainer",
+    "trainerType": "daily-trainer",
+    "picks": [
+      {
+        "shoeId": "asics-superblast-2",
+        "bannerLabel": "Top pick",
+        "whyThisWorks": "Race-oriented runners love the Superblast 2 for daily training — race-shoe foam (FF Blast+) without the carbon plate, so you can train in it daily and still feel the performance difference.",
+        "features": [
+          { "label": "Race-grade foam for daily training", "positive": true },
+          { "label": "Durable enough for 800km+", "positive": true },
+          { "label": "Very high stack — takes adjustment", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 7,
+          "improve-pace": 7,
+          "hit-pb": 5,
+          "long-distance": 8,
+          "race-day": 5
+        }
+      },
+      {
+        "shoeId": "asics-novablast-4",
+        "bannerLabel": "Bouncy daily",
+        "whyThisWorks": "The Novablast 4 earns its place in any race trainer's rotation — bouncy FF Blast+ foam keeps legs fresh between harder sessions without sacrificing feel.",
+        "features": [
+          { "label": "Bouncy foam for active recovery", "positive": true },
+          { "label": "Tempo-capable on busy training days", "positive": true },
+          { "label": "Less protective than max-cushion trainers", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 6,
+          "improve-pace": 6,
+          "hit-pb": 4,
+          "long-distance": 7,
+          "race-day": 4
+        }
+      },
+      {
+        "shoeId": "on-cloudmonster-2",
+        "bannerLabel": "On's daily workhorse",
+        "whyThisWorks": "The Cloudmonster 2 brings On's distinctive cloud cushioning into a high-mileage daily trainer with a nylon Speedboard for extra propulsion on longer runs.",
+        "features": [
+          { "label": "Cloud cushioning with nylon plate", "positive": true },
+          { "label": "Versatile daily trainer", "positive": true },
+          { "label": "Heavier than other On models", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 7,
+          "improve-pace": 5,
+          "hit-pb": 3,
+          "long-distance": 7,
+          "race-day": 3
+        }
+      }
+    ]
+  },
+  {
+    "personaId": "race-trainer",
+    "trainerType": "tempo",
+    "picks": [
+      {
+        "shoeId": "saucony-endorphin-speed-4",
+        "bannerLabel": "Top pick",
+        "whyThisWorks": "The go-to tempo shoe for serious marathon trainers. The nylon SpeedRoll plate delivers race-like propulsion for marathon pace sessions, threshold runs and long tempo intervals.",
+        "features": [
+          { "label": "Best nylon-plate tempo shoe", "positive": true },
+          { "label": "Durable enough for daily training", "positive": true },
+          { "label": "Not as fast as carbon on race day", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 4,
+          "improve-pace": 10,
+          "hit-pb": 6,
+          "long-distance": 5,
+          "race-day": 5
+        }
+      },
+      {
+        "shoeId": "brooks-hyperion-max-2",
+        "bannerLabel": "Brooks tempo weapon",
+        "whyThisWorks": "The Hyperion Max 2's DNA Flash nylon plate bridges the gap between Brooks' training lineup and race day — a fast, cushioned tempo shoe that handles long marathon-pace sessions.",
+        "features": [
+          { "label": "Nylon plate for race-feel training", "positive": true },
+          { "label": "Enough cushion for longer tempo", "positive": true },
+          { "label": "Brooks-only retailer options", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 4,
+          "improve-pace": 8,
+          "hit-pb": 5,
+          "long-distance": 5,
+          "race-day": 5
+        }
+      },
+      {
+        "shoeId": "hoka-mach-6",
+        "bannerLabel": "Hoka tempo",
+        "whyThisWorks": "Race trainers who like Hoka's geometry will find the Mach 6 perfect for tempo days — light enough to feel fast, bouncy enough to survive multi-session weeks.",
+        "features": [
+          { "label": "Light with nylon plate", "positive": true },
+          { "label": "Hoka ride feel for tempo efforts", "positive": true },
+          { "label": "Standard width only", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 4,
+          "improve-pace": 8,
+          "hit-pb": 5,
+          "long-distance": 5,
+          "race-day": 5
+        }
+      }
+    ]
+  },
+  {
+    "personaId": "race-trainer",
+    "trainerType": "race-day",
+    "picks": [
+      {
+        "shoeId": "nike-alphafly-3",
+        "bannerLabel": "Top pick",
+        "whyThisWorks": "Race trainers who know their stuff belong in the Alphafly 3 — the most aggressive, highest-performing race shoe Nike makes. ZoomX foam with air pods and a carbon plate make this the fastest option on the market.",
+        "features": [
+          { "label": "Air pod + ZoomX energy return", "positive": true },
+          { "label": "Maximum race-day performance", "positive": true },
+          { "label": "Unstable — needs experienced runner", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 2,
+          "improve-pace": 8,
+          "hit-pb": 10,
+          "long-distance": 2,
+          "race-day": 10
+        }
+      },
+      {
+        "shoeId": "nike-vaporfly-3",
+        "bannerLabel": "Smart choice",
+        "whyThisWorks": "Even experienced race trainers often choose the Vaporfly 3 over the Alphafly — less aggressive geometry, same ZoomX foam, and more comfortable over 26.2 miles.",
+        "features": [
+          { "label": "Lighter than Alphafly (184g)", "positive": true },
+          { "label": "More forgiving geometry", "positive": true },
+          { "label": "Slightly less peak energy return", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 3,
+          "improve-pace": 8,
+          "hit-pb": 9,
+          "long-distance": 3,
+          "race-day": 10
+        }
+      },
+      {
+        "shoeId": "new-balance-sc-elite-v4",
+        "bannerLabel": "Stable carbon",
+        "whyThisWorks": "The SC Elite v4's Energy ARC carbon plate delivers exceptional energy return with more stability than most supershoes — ideal for race trainers who want performance without the wobbly feel.",
+        "features": [
+          { "label": "More stable than Alphafly/Vaporfly", "positive": true },
+          { "label": "Superb energy return", "positive": true },
+          { "label": "Slightly heavier than Nike options", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 3,
+          "improve-pace": 8,
+          "hit-pb": 9,
+          "long-distance": 3,
+          "race-day": 9
+        }
+      }
+    ]
+  },
+  {
+    "personaId": "pb-chaser",
+    "trainerType": "daily-trainer",
+    "picks": [
+      {
+        "shoeId": "asics-superblast-2",
+        "bannerLabel": "Top pick",
+        "whyThisWorks": "PB chasers need a daily trainer that keeps their legs fresh without sacrificing feel. The Superblast 2's FF Blast+ foam is the closest thing to race-shoe performance in a daily trainer.",
+        "features": [
+          { "label": "Race-grade foam, no carbon tax", "positive": true },
+          { "label": "Can double as a training race shoe", "positive": true },
+          { "label": "High stack changes run feel", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 6,
+          "improve-pace": 7,
+          "hit-pb": 6,
+          "long-distance": 8,
+          "race-day": 6
+        }
+      },
+      {
+        "shoeId": "asics-novablast-4",
+        "bannerLabel": "Bouncy alternative",
+        "whyThisWorks": "PB chasers who want to protect their legs on easy days while maintaining feel will love the Novablast 4. Bouncy enough to feel fast, protective enough for back-to-back hard weeks.",
+        "features": [
+          { "label": "Bouncy FF Blast+ foam", "positive": true },
+          { "label": "Tempo-capable on tired legs", "positive": true },
+          { "label": "Not a replacement for a true daily trainer", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 5,
+          "improve-pace": 7,
+          "hit-pb": 5,
+          "long-distance": 7,
+          "race-day": 4
+        }
+      },
+      {
+        "shoeId": "new-balance-1080v14",
+        "bannerLabel": "Recovery days",
+        "whyThisWorks": "On truly easy days and recovery runs, the 1080v14's Fresh Foam X is the antidote to race training fatigue — maximally cushioned and available in multiple widths.",
+        "features": [
+          { "label": "Maximum cushion for recovery", "positive": true },
+          { "label": "Wide width options", "positive": true },
+          { "label": "Too soft for quality sessions", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 8,
+          "improve-pace": 3,
+          "hit-pb": 2,
+          "long-distance": 8,
+          "race-day": 2
+        }
+      }
+    ]
+  },
+  {
+    "personaId": "pb-chaser",
+    "trainerType": "tempo",
+    "picks": [
+      {
+        "shoeId": "saucony-endorphin-speed-4",
+        "bannerLabel": "Top pick",
+        "whyThisWorks": "The Endorphin Speed 4 is the tempo shoe of choice for PB chasers — the nylon SpeedRoll plate means you can run at marathon pace day after day without burning through a carbon race shoe.",
+        "features": [
+          { "label": "Nylon plate tempo shoe", "positive": true },
+          { "label": "Durable for weekly tempo blocks", "positive": true },
+          { "label": "Not as fast as carbon on race day", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 4,
+          "improve-pace": 10,
+          "hit-pb": 7,
+          "long-distance": 5,
+          "race-day": 5
+        }
+      },
+      {
+        "shoeId": "brooks-hyperion-max-2",
+        "bannerLabel": "Fast trainer",
+        "whyThisWorks": "PB chasers who train in Brooks will find the Hyperion Max 2 bridges their training to race pace beautifully — faster than a daily trainer, more accessible than a full carbon shoe.",
+        "features": [
+          { "label": "Fast without the carbon premium", "positive": true },
+          { "label": "Handles marathon-pace sessions", "positive": true },
+          { "label": "Less energy return than carbon", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 4,
+          "improve-pace": 8,
+          "hit-pb": 6,
+          "long-distance": 5,
+          "race-day": 5
+        }
+      },
+      {
+        "shoeId": "asics-superblast-2",
+        "bannerLabel": "Versatile option",
+        "whyThisWorks": "Some PB chasers use the Superblast 2 as their tempo shoe — the FF Blast+ foam is responsive enough for marathon-pace sessions while the high stack keeps fatigue at bay.",
+        "features": [
+          { "label": "FF Blast+ foam feels fast", "positive": true },
+          { "label": "Handles marathon pace comfortably", "positive": true },
+          { "label": "No plate means less propulsion than Speed 4", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 5,
+          "improve-pace": 7,
+          "hit-pb": 5,
+          "long-distance": 7,
+          "race-day": 4
+        }
+      }
+    ]
+  },
+  {
+    "personaId": "pb-chaser",
+    "trainerType": "race-day",
+    "picks": [
+      {
+        "shoeId": "nike-alphafly-3",
+        "bannerLabel": "Top pick",
+        "whyThisWorks": "PB chasers who've prepared properly deserve the Alphafly 3. It's the fastest shoe on the market — air pod energy return layered on top of ZoomX foam delivers a genuinely unreal ride.",
+        "features": [
+          { "label": "Fastest shoe available", "positive": true },
+          { "label": "Air pod + ZoomX dual energy return", "positive": true },
+          { "label": "Aggressive — needs race-ready form", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 2,
+          "improve-pace": 8,
+          "hit-pb": 10,
+          "long-distance": 2,
+          "race-day": 10
+        }
+      },
+      {
+        "shoeId": "saucony-endorphin-elite",
+        "bannerLabel": "Precise racer",
+        "whyThisWorks": "The Endorphin Elite rewards the efficiency of a runner who's trained well. PWRRUN HG foam with a carbon plate gives a precise, fast ride for PB-focused runners.",
+        "features": [
+          { "label": "Precision carbon race shoe", "positive": true },
+          { "label": "Rewards efficient running form", "positive": true },
+          { "label": "Less aggressive than Alphafly", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 3,
+          "improve-pace": 8,
+          "hit-pb": 9,
+          "long-distance": 3,
+          "race-day": 9
+        }
+      },
+      {
+        "shoeId": "on-cloudboom-echo-3",
+        "bannerLabel": "On's race weapon",
+        "whyThisWorks": "For PB chasers who train in On Running gear, the Cloudboom Echo 3 is their race shoe. Carbon Speedboard and a high stack deliver genuine race-day performance with On's unique geometry.",
+        "features": [
+          { "label": "On's best carbon race shoe", "positive": true },
+          { "label": "Distinctive heel geometry", "positive": true },
+          { "label": "Takes time to adapt to On's ride", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 3,
+          "improve-pace": 7,
+          "hit-pb": 9,
+          "long-distance": 3,
+          "race-day": 9
+        }
+      }
+    ]
+  },
+  {
+    "personaId": "trail-runner",
+    "trainerType": "daily-trainer",
+    "picks": [
+      {
+        "shoeId": "asics-gel-nimbus-26",
+        "bannerLabel": "Top pick",
+        "whyThisWorks": "Trail runners transitioning to road marathons need maximum protection — the Nimbus 26's deep cushioning absorbs the relentless impact of road running that trail shoes never had to handle.",
+        "features": [
+          { "label": "Maximum road cushioning", "positive": true },
+          { "label": "Wide width options for trail-wide feet", "positive": true },
+          { "label": "Heavier than most road shoes", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 10,
+          "improve-pace": 2,
+          "hit-pb": 1,
+          "long-distance": 9,
+          "race-day": 1
+        }
+      },
+      {
+        "shoeId": "new-balance-1080v14",
+        "bannerLabel": "Plush protection",
+        "whyThisWorks": "The 1080v14 suits trail runners moving onto roads — it's wide, plush, and protective. Fresh Foam X handles the repetitive impact road marathons demand.",
+        "features": [
+          { "label": "Available in 4 widths", "positive": true },
+          { "label": "Pillow-soft road cushioning", "positive": true },
+          { "label": "Doesn't offer trail shoe traction", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 9,
+          "improve-pace": 3,
+          "hit-pb": 1,
+          "long-distance": 9,
+          "race-day": 1
+        }
+      },
+      {
+        "shoeId": "hoka-clifton-9",
+        "bannerLabel": "Hoka transition",
+        "whyThisWorks": "Trail runners used to Hoka will naturally gravitate to the Clifton 9 — familiar Hoka geometry in a road shoe that provides the protection needed for marathon training.",
+        "features": [
+          { "label": "Familiar Hoka geometry on roads", "positive": true },
+          { "label": "Protective for road training", "positive": true },
+          { "label": "Less ground feel than trail shoes", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 9,
+          "improve-pace": 3,
+          "hit-pb": 2,
+          "long-distance": 8,
+          "race-day": 2
+        }
+      }
+    ]
+  },
+  {
+    "personaId": "trail-runner",
+    "trainerType": "tempo",
+    "picks": [
+      {
+        "shoeId": "asics-superblast-2",
+        "bannerLabel": "Top pick",
+        "whyThisWorks": "The Superblast 2 is an excellent tempo shoe for trail runners doing road marathon training — high cushion absorbs unfamiliar road impact while FF Blast+ foam keeps the session feeling purposeful.",
+        "features": [
+          { "label": "High stack handles road impact", "positive": true },
+          { "label": "Bouncy enough for tempo sessions", "positive": true },
+          { "label": "Not as efficient as pure tempo shoes", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 6,
+          "improve-pace": 7,
+          "hit-pb": 5,
+          "long-distance": 7,
+          "race-day": 4
+        }
+      },
+      {
+        "shoeId": "hoka-mach-6",
+        "bannerLabel": "Hoka tempo",
+        "whyThisWorks": "Trail runners transitioning to roads will appreciate the Mach 6 — light, with a nylon plate for road tempo sessions and the familiar Hoka ride they know from training.",
+        "features": [
+          { "label": "Nylon plate for road tempo", "positive": true },
+          { "label": "Hoka feel on the road", "positive": true },
+          { "label": "Only standard width", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 5,
+          "improve-pace": 8,
+          "hit-pb": 5,
+          "long-distance": 5,
+          "race-day": 5
+        }
+      },
+      {
+        "shoeId": "asics-novablast-4",
+        "bannerLabel": "Protective tempo",
+        "whyThisWorks": "For trail runners who find road tempo sessions hard on their legs, the Novablast 4 offers enough bounce for pace work with enough cushion to survive the unaccustomed impact.",
+        "features": [
+          { "label": "Cushioned enough for road tempo", "positive": true },
+          { "label": "Wide option for trail-adapted feet", "positive": true },
+          { "label": "Heavier than dedicated tempo shoes", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 6,
+          "improve-pace": 7,
+          "hit-pb": 4,
+          "long-distance": 6,
+          "race-day": 4
+        }
+      }
+    ]
+  },
+  {
+    "personaId": "trail-runner",
+    "trainerType": "race-day",
+    "picks": [
+      {
+        "shoeId": "asics-metaspeed-edge-paris",
+        "bannerLabel": "Top pick",
+        "whyThisWorks": "Trail runners tend to have a naturally efficient, higher-cadence stride — exactly what the Metaspeed Edge Paris is built for. It rewards the quick, agile gait trail runners bring to road racing.",
+        "features": [
+          { "label": "Built for quick cadence runners", "positive": true },
+          { "label": "Lighter than most carbon shoes", "positive": true },
+          { "label": "Less forgiving for heel strikers", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 3,
+          "improve-pace": 7,
+          "hit-pb": 8,
+          "long-distance": 3,
+          "race-day": 9
+        }
+      },
+      {
+        "shoeId": "nike-vaporfly-3",
+        "bannerLabel": "Safe race choice",
+        "whyThisWorks": "Trail runners racing their first road marathon should consider the Vaporfly 3 — it's more forgiving than the Alphafly and rewards efficient form rather than demanding it.",
+        "features": [
+          { "label": "Forgiving for first-time road racers", "positive": true },
+          { "label": "ZoomX foam + carbon plate", "positive": true },
+          { "label": "Race-day only durability", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 4,
+          "improve-pace": 8,
+          "hit-pb": 8,
+          "long-distance": 3,
+          "race-day": 9
+        }
+      },
+      {
+        "shoeId": "hoka-rocket-x-2",
+        "bannerLabel": "Familiar brand",
+        "whyThisWorks": "Trail runners who live in Hoka will feel at home in the Rocket X 2 on race day — the PEBA foam and carbon plate bring serious speed to a Hoka geometry they already trust.",
+        "features": [
+          { "label": "Familiar Hoka geometry", "positive": true },
+          { "label": "PEBA carbon race shoe", "positive": true },
+          { "label": "Standard width only", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 3,
+          "improve-pace": 7,
+          "hit-pb": 8,
+          "long-distance": 3,
+          "race-day": 9
+        }
+      }
+    ]
+  },
+  {
+    "personaId": "running-smart",
+    "trainerType": "daily-trainer",
+    "picks": [
+      {
+        "shoeId": "asics-gel-kayano-31",
+        "bannerLabel": "Top pick",
+        "whyThisWorks": "Smart runners who know they overpronate or get knee issues during marathon training will find the Kayano 31 invaluable — 4D Guidance stability without a corrective feel.",
+        "features": [
+          { "label": "Gentle stability for long training", "positive": true },
+          { "label": "Protects knees and ankles at mile 20", "positive": true },
+          { "label": "Not a fast shoe", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 10,
+          "improve-pace": 2,
+          "hit-pb": 1,
+          "long-distance": 9,
+          "race-day": 1
+        }
+      },
+      {
+        "shoeId": "asics-gel-nimbus-26",
+        "bannerLabel": "Maximum protection",
+        "whyThisWorks": "Injury-conscious runners love the Nimbus 26 for its almost excessive cushioning — the most protective daily trainer available for marathon training, ideal for those managing niggles.",
+        "features": [
+          { "label": "Maximum protective cushioning", "positive": true },
+          { "label": "Extra-wide available", "positive": true },
+          { "label": "Very heavy for some runners", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 10,
+          "improve-pace": 2,
+          "hit-pb": 1,
+          "long-distance": 10,
+          "race-day": 1
+        }
+      },
+      {
+        "shoeId": "hoka-clifton-9",
+        "bannerLabel": "Forgiving daily",
+        "whyThisWorks": "Smart runners appreciate the Clifton 9's forgiving geometry — it reduces impact stress on joints, making it ideal for runners managing load or coming back to marathon training.",
+        "features": [
+          { "label": "Joint-friendly cushioning", "positive": true },
+          { "label": "Wide option available", "positive": true },
+          { "label": "Not a stability shoe", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 9,
+          "improve-pace": 3,
+          "hit-pb": 2,
+          "long-distance": 8,
+          "race-day": 2
+        }
+      }
+    ]
+  },
+  {
+    "personaId": "running-smart",
+    "trainerType": "tempo",
+    "picks": [
+      {
+        "shoeId": "asics-superblast-2",
+        "bannerLabel": "Top pick",
+        "whyThisWorks": "Smart runners doing tempo work love the Superblast 2 — it feels fast enough for quality sessions while its high-stack cushioning protects injury-prone runners from the impact of sustained marathon pace.",
+        "features": [
+          { "label": "Fast foam, joint-friendly stack", "positive": true },
+          { "label": "Less aggressive than carbon shoes", "positive": true },
+          { "label": "Very high stack — takes adjustment", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 6,
+          "improve-pace": 7,
+          "hit-pb": 5,
+          "long-distance": 8,
+          "race-day": 5
+        }
+      },
+      {
+        "shoeId": "saucony-endorphin-speed-4",
+        "bannerLabel": "Controlled tempo",
+        "whyThisWorks": "The Endorphin Speed 4 lets smart runners do quality tempo sessions without the instability risk of carbon shoes — nylon plate propulsion in a more forgiving package.",
+        "features": [
+          { "label": "Nylon plate, more stable than carbon", "positive": true },
+          { "label": "Can train in it daily", "positive": true },
+          { "label": "Lower stack than Superblast", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 5,
+          "improve-pace": 8,
+          "hit-pb": 5,
+          "long-distance": 5,
+          "race-day": 5
+        }
+      },
+      {
+        "shoeId": "brooks-hyperion-max-2",
+        "bannerLabel": "Brooks tempo",
+        "whyThisWorks": "Smart runners who want a measured approach to speed work will appreciate the Hyperion Max 2 — it's Brooks' fastest trainer without crossing into the instability territory of carbon shoes.",
+        "features": [
+          { "label": "Fast but controlled feel", "positive": true },
+          { "label": "More stable than carbon options", "positive": true },
+          { "label": "Standard width only", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 5,
+          "improve-pace": 7,
+          "hit-pb": 5,
+          "long-distance": 5,
+          "race-day": 5
+        }
+      }
+    ]
+  },
+  {
+    "personaId": "running-smart",
+    "trainerType": "race-day",
+    "picks": [
+      {
+        "shoeId": "nike-vaporfly-3",
+        "bannerLabel": "Top pick",
+        "whyThisWorks": "Smart runners choose the Vaporfly 3 over the Alphafly for its more forgiving, predictable geometry. It delivers elite race-day performance without requiring perfect form to use safely.",
+        "features": [
+          { "label": "More stable than Alphafly", "positive": true },
+          { "label": "ZoomX + carbon for speed", "positive": true },
+          { "label": "Race-day only lifespan", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 4,
+          "improve-pace": 8,
+          "hit-pb": 9,
+          "long-distance": 3,
+          "race-day": 10
+        }
+      },
+      {
+        "shoeId": "adidas-adios-pro-4",
+        "bannerLabel": "Stable carbon",
+        "whyThisWorks": "Smart runners who want carbon performance with more stability should try the Adios Pro 4 — Energy Rods give a locked-in, confident feel that more cautious runners tend to prefer over the Vaporfly's rocker.",
+        "features": [
+          { "label": "Most stable super shoe", "positive": true },
+          { "label": "Energy Rods unique propulsion", "positive": true },
+          { "label": "Different feel to foam-only plates", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 4,
+          "improve-pace": 8,
+          "hit-pb": 9,
+          "long-distance": 4,
+          "race-day": 9
+        }
+      },
+      {
+        "shoeId": "new-balance-sc-elite-v4",
+        "bannerLabel": "Controlled racer",
+        "whyThisWorks": "The SC Elite v4 has a reputation as the most stable carbon race shoe — perfect for smart runners who want race-day performance without the instability risk of the Alphafly or Vaporfly.",
+        "features": [
+          { "label": "Most stable carbon shoe", "positive": true },
+          { "label": "Energy ARC plate + plush foam", "positive": true },
+          { "label": "Slightly heavier than Nike supershoes", "positive": false }
+        ],
+        "goalBoost": {
+          "finish-comfortably": 4,
+          "improve-pace": 7,
+          "hit-pb": 9,
+          "long-distance": 4,
+          "race-day": 9
+        }
+      }
+    ]
+  }
+]

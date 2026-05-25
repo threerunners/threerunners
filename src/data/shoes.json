@@ -31,6 +31,8 @@
       "personaFit": ["new-runner", "parkrunner", "race-trainer"],
       "conditionSuitability": []
     },
+    "rideFeel": { "cushion": 65, "response": 60, "stability": 65 },
+    "genderFit": ["all"],
     "editorial": {
       "verdict": "The most forgiving daily trainer Nike makes.",
       "realTalkTags": ["Heavy trainer", "Everyday workhorse", "Nothing flashy"],
@@ -75,6 +77,8 @@
       "personaFit": ["new-runner", "parkrunner"],
       "conditionSuitability": []
     },
+    "rideFeel": { "cushion": 72, "response": 55, "stability": 70 },
+    "genderFit": ["all"],
     "editorial": {
       "verdict": "Smoother than the Pegasus and a little roomier through the toe box.",
       "realTalkTags": ["Plush and roomy", "Long-run friend", "Comfort-first"],
@@ -119,6 +123,8 @@
       "personaFit": ["new-runner", "running-smart"],
       "conditionSuitability": ["knee-pain", "overpronation"]
     },
+    "rideFeel": { "cushion": 76, "response": 50, "stability": 88 },
+    "genderFit": ["all"],
     "editorial": {
       "verdict": "Gentle stability that holds you together at mile 20.",
       "realTalkTags": ["Gentle stability", "Mile-20 hero", "Knee-saver"],
@@ -163,6 +169,8 @@
       "personaFit": ["pb-chaser", "race-trainer"],
       "conditionSuitability": []
     },
+    "rideFeel": { "cushion": 80, "response": 96, "stability": 53 },
+    "genderFit": ["all"],
     "editorial": {
       "verdict": "The Alphafly is overkill for most halves — but if you want zero compromises and the fastest 21.1km of your life, nothing else comes close.",
       "realTalkTags": ["Carbon plate beast", "Race-day only", "Pace machine"],
@@ -207,6 +215,8 @@
       "personaFit": ["pb-chaser", "race-trainer"],
       "conditionSuitability": []
     },
+    "rideFeel": { "cushion": 74, "response": 91, "stability": 58 },
+    "genderFit": ["all"],
     "editorial": {
       "verdict": "Pure race-day precision for runners who know their pace and want a shoe that won't hold them back.",
       "realTalkTags": ["Precision racer", "Light and fast", "Form rewarding"],
@@ -251,6 +261,8 @@
       "personaFit": ["race-trainer", "pb-chaser"],
       "conditionSuitability": []
     },
+    "rideFeel": { "cushion": 64, "response": 94, "stability": 67 },
+    "genderFit": ["all"],
     "editorial": {
       "verdict": "Designed for cadence runners who turn over fast — the Edge rewards quick, efficient strides.",
       "realTalkTags": ["Cadence runner", "Quick and light", "Efficient stride"],
@@ -260,6 +272,650 @@
     "media": {
       "primaryImage": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&q=80",
       "altText": "Asics Metaspeed Edge Paris race shoe",
+      "gallery": []
+    }
+  },
+  {
+    "id": "nike-vaporfly-3",
+    "name": "Nike Vaporfly 3",
+    "brand": "Nike",
+    "version": "3",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 184,
+      "stackHeightHeel": 38,
+      "stackHeightToe": 30,
+      "dropMm": 8,
+      "carbonPlate": true,
+      "widthOptions": ["standard"]
+    },
+    "scores": {
+      "cushioning": 7.5,
+      "responsiveness": 9.5,
+      "stability": 6,
+      "durability": 6,
+      "valueForMoney": 6.5,
+      "overall": 8.5
+    },
+    "tags": {
+      "useCase": ["race-day"],
+      "terrain": ["road"],
+      "distanceSuitability": ["half", "marathon"],
+      "runnerLevel": ["intermediate", "advanced"],
+      "pronationSuitability": ["neutral"],
+      "personaFit": ["race-trainer", "pb-chaser", "trail-runner", "running-smart"],
+      "conditionSuitability": []
+    },
+    "rideFeel": { "cushion": 76, "response": 92, "stability": 58 },
+    "genderFit": ["all"],
+    "editorial": {
+      "verdict": "Lighter and more forgiving than the Alphafly — the smart choice for a marathon PB.",
+      "realTalkTags": ["Carbon plate", "Race-day weapon", "Worth the price"],
+      "whoThisIsFor": "Any runner chasing a time goal who wants the gold-standard race shoe without the aggressive geometry of the Alphafly.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",
+      "altText": "Nike Vaporfly 3 carbon race shoe",
+      "gallery": []
+    }
+  },
+  {
+    "id": "adidas-adios-pro-4",
+    "name": "Adidas Adizero Adios Pro 4",
+    "brand": "Adidas",
+    "version": "4",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 201,
+      "stackHeightHeel": 39,
+      "stackHeightToe": 33,
+      "dropMm": 6,
+      "carbonPlate": true,
+      "widthOptions": ["standard"]
+    },
+    "scores": {
+      "cushioning": 7.5,
+      "responsiveness": 9,
+      "stability": 7.5,
+      "durability": 6.5,
+      "valueForMoney": 6.5,
+      "overall": 8.5
+    },
+    "tags": {
+      "useCase": ["race-day"],
+      "terrain": ["road"],
+      "distanceSuitability": ["half", "marathon"],
+      "runnerLevel": ["intermediate", "advanced", "elite"],
+      "pronationSuitability": ["neutral"],
+      "personaFit": ["pb-chaser", "race-trainer", "parkrunner"],
+      "conditionSuitability": []
+    },
+    "rideFeel": { "cushion": 72, "response": 90, "stability": 72 },
+    "genderFit": ["all"],
+    "editorial": {
+      "verdict": "The most stable super shoe in its class — Energy Rods give a unique locked-in feel.",
+      "realTalkTags": ["Carbon plate", "Rock solid stability", "Different energy return feel"],
+      "whoThisIsFor": "Runners who find the Alphafly and Vaporfly too unstable, or those who love Adidas's propulsive rod-based geometry.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",
+      "altText": "Adidas Adizero Adios Pro 4 carbon race shoe",
+      "gallery": []
+    }
+  },
+  {
+    "id": "saucony-endorphin-speed-4",
+    "name": "Saucony Endorphin Speed 4",
+    "brand": "Saucony",
+    "version": "4",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 233,
+      "stackHeightHeel": 36,
+      "stackHeightToe": 28,
+      "dropMm": 8,
+      "carbonPlate": false,
+      "widthOptions": ["standard"]
+    },
+    "scores": {
+      "cushioning": 7,
+      "responsiveness": 8,
+      "stability": 6.5,
+      "durability": 8,
+      "valueForMoney": 8.5,
+      "overall": 8
+    },
+    "tags": {
+      "useCase": ["tempo", "daily-trainer"],
+      "terrain": ["road"],
+      "distanceSuitability": ["5k", "10k", "half", "marathon"],
+      "runnerLevel": ["beginner", "intermediate", "advanced"],
+      "pronationSuitability": ["neutral"],
+      "personaFit": ["new-runner", "parkrunner", "race-trainer", "pb-chaser", "trail-runner", "running-smart"],
+      "conditionSuitability": []
+    },
+    "rideFeel": { "cushion": 68, "response": 80, "stability": 63 },
+    "genderFit": ["all"],
+    "editorial": {
+      "verdict": "The best tempo shoe on the market — does everything the race shoes do, minus the carbon price tag.",
+      "realTalkTags": ["Nylon plate", "Tempo workhorse", "Do-it-all trainer"],
+      "whoThisIsFor": "Runners who want a speed shoe they can train in daily without saving it only for race day.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&q=80",
+      "altText": "Saucony Endorphin Speed 4 tempo shoe",
+      "gallery": []
+    }
+  },
+  {
+    "id": "asics-superblast-2",
+    "name": "Asics Superblast 2",
+    "brand": "Asics",
+    "version": "2",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 249,
+      "stackHeightHeel": 45,
+      "stackHeightToe": 37,
+      "dropMm": 8,
+      "carbonPlate": false,
+      "widthOptions": ["standard", "wide"]
+    },
+    "scores": {
+      "cushioning": 9.5,
+      "responsiveness": 7.5,
+      "stability": 6.5,
+      "durability": 9,
+      "valueForMoney": 8,
+      "overall": 8.5
+    },
+    "tags": {
+      "useCase": ["daily-trainer", "long-run"],
+      "terrain": ["road"],
+      "distanceSuitability": ["10k", "half", "marathon", "ultra"],
+      "runnerLevel": ["beginner", "intermediate", "advanced"],
+      "pronationSuitability": ["neutral"],
+      "personaFit": ["new-runner", "parkrunner", "race-trainer", "pb-chaser", "trail-runner", "running-smart"],
+      "conditionSuitability": []
+    },
+    "rideFeel": { "cushion": 93, "response": 73, "stability": 63 },
+    "genderFit": ["all"],
+    "editorial": {
+      "verdict": "Race-shoe foam without the carbon plate price — the everyday hero that can race marathons.",
+      "realTalkTags": ["No plate", "Bouncy cushion", "Can race AND train in it"],
+      "whoThisIsFor": "Runners who want a single high-performance shoe they can use for everything from easy miles to marathon pace.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&q=80",
+      "altText": "Asics Superblast 2 high-stack running shoe",
+      "gallery": []
+    }
+  },
+  {
+    "id": "new-balance-1080v14",
+    "name": "New Balance Fresh Foam 1080v14",
+    "brand": "New Balance",
+    "version": "14",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 298,
+      "stackHeightHeel": 38,
+      "stackHeightToe": 32,
+      "dropMm": 6,
+      "carbonPlate": false,
+      "widthOptions": ["narrow", "standard", "wide", "extra-wide"]
+    },
+    "scores": {
+      "cushioning": 9,
+      "responsiveness": 6,
+      "stability": 7,
+      "durability": 8.5,
+      "valueForMoney": 7.5,
+      "overall": 7.5
+    },
+    "tags": {
+      "useCase": ["daily-trainer", "recovery"],
+      "terrain": ["road"],
+      "distanceSuitability": ["10k", "half", "marathon"],
+      "runnerLevel": ["beginner", "intermediate"],
+      "pronationSuitability": ["neutral", "mild-overpronation"],
+      "personaFit": ["new-runner", "parkrunner", "race-trainer", "trail-runner", "running-smart"],
+      "conditionSuitability": []
+    },
+    "rideFeel": { "cushion": 92, "response": 57, "stability": 65 },
+    "genderFit": ["all"],
+    "editorial": {
+      "verdict": "The plushest daily trainer for marathon training — your legs will thank you on recovery days.",
+      "realTalkTags": ["Maximum cushion", "Heavy but protective", "Wide width options"],
+      "whoThisIsFor": "High-mileage marathon trainers who want maximum leg protection on easy and long run days.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&q=80",
+      "altText": "New Balance Fresh Foam 1080v14 daily trainer",
+      "gallery": []
+    }
+  },
+  {
+    "id": "hoka-rocket-x-2",
+    "name": "Hoka Rocket X 2",
+    "brand": "Hoka",
+    "version": "2",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 225,
+      "stackHeightHeel": 36,
+      "stackHeightToe": 31,
+      "dropMm": 5,
+      "carbonPlate": true,
+      "widthOptions": ["standard"]
+    },
+    "scores": {
+      "cushioning": 7.5,
+      "responsiveness": 9,
+      "stability": 6.5,
+      "durability": 6,
+      "valueForMoney": 7,
+      "overall": 8.5
+    },
+    "tags": {
+      "useCase": ["race-day"],
+      "terrain": ["road"],
+      "distanceSuitability": ["half", "marathon"],
+      "runnerLevel": ["intermediate", "advanced"],
+      "pronationSuitability": ["neutral"],
+      "personaFit": ["race-trainer", "pb-chaser", "parkrunner"],
+      "conditionSuitability": []
+    },
+    "rideFeel": { "cushion": 78, "response": 88, "stability": 62 },
+    "genderFit": ["all"],
+    "editorial": {
+      "verdict": "Hoka's fastest shoe — lighter and livelier than anything in their lineup, built purely for race day.",
+      "realTalkTags": ["Carbon plate", "PEBA foam", "Hoka's flagship racer"],
+      "whoThisIsFor": "Runners who love the Hoka feel and want a proper carbon race shoe for marathon day.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",
+      "altText": "Hoka Rocket X 2 carbon race shoe",
+      "gallery": []
+    }
+  },
+  {
+    "id": "hoka-mach-6",
+    "name": "Hoka Mach 6",
+    "brand": "Hoka",
+    "version": "6",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 210,
+      "stackHeightHeel": 37,
+      "stackHeightToe": 32,
+      "dropMm": 5,
+      "carbonPlate": false,
+      "widthOptions": ["standard"]
+    },
+    "scores": {
+      "cushioning": 7.5,
+      "responsiveness": 8,
+      "stability": 6.5,
+      "durability": 8,
+      "valueForMoney": 8.5,
+      "overall": 8
+    },
+    "tags": {
+      "useCase": ["tempo", "daily-trainer"],
+      "terrain": ["road"],
+      "distanceSuitability": ["5k", "10k", "half", "marathon"],
+      "runnerLevel": ["beginner", "intermediate", "advanced"],
+      "pronationSuitability": ["neutral"],
+      "personaFit": ["new-runner", "parkrunner", "race-trainer", "pb-chaser", "running-smart"],
+      "conditionSuitability": []
+    },
+    "rideFeel": { "cushion": 72, "response": 82, "stability": 65 },
+    "genderFit": ["all"],
+    "editorial": {
+      "verdict": "One of Hoka's most versatile shoes — light enough to tempo in, cushioned enough to train in daily.",
+      "realTalkTags": ["Nylon plate", "Light and bouncy", "Hoka's best all-rounder"],
+      "whoThisIsFor": "Runners who want one Hoka shoe that does everything from easy miles to marathon pace.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&q=80",
+      "altText": "Hoka Mach 6 tempo running shoe",
+      "gallery": []
+    }
+  },
+  {
+    "id": "hoka-clifton-9",
+    "name": "Hoka Clifton 9",
+    "brand": "Hoka",
+    "version": "9",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 249,
+      "stackHeightHeel": 32,
+      "stackHeightToe": 27,
+      "dropMm": 5,
+      "carbonPlate": false,
+      "widthOptions": ["standard", "wide"]
+    },
+    "scores": {
+      "cushioning": 8.5,
+      "responsiveness": 6,
+      "stability": 6.5,
+      "durability": 8.5,
+      "valueForMoney": 8.5,
+      "overall": 8
+    },
+    "tags": {
+      "useCase": ["daily-trainer", "recovery"],
+      "terrain": ["road"],
+      "distanceSuitability": ["10k", "half", "marathon"],
+      "runnerLevel": ["beginner", "intermediate"],
+      "pronationSuitability": ["neutral"],
+      "personaFit": ["new-runner", "parkrunner", "trail-runner", "running-smart"],
+      "conditionSuitability": []
+    },
+    "rideFeel": { "cushion": 88, "response": 58, "stability": 66 },
+    "genderFit": ["all"],
+    "editorial": {
+      "verdict": "The softest, most approachable Hoka — the shoe that got thousands of people into running.",
+      "realTalkTags": ["Maximum softness", "Beginner-friendly", "Long-run legs"],
+      "whoThisIsFor": "Anyone new to running or who wants a plush, forgiving daily trainer that never feels harsh.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&q=80",
+      "altText": "Hoka Clifton 9 cushioned daily trainer",
+      "gallery": []
+    }
+  },
+  {
+    "id": "on-cloudboom-echo-3",
+    "name": "On Cloudboom Echo 3",
+    "brand": "On",
+    "version": "3",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 215,
+      "stackHeightHeel": 37,
+      "stackHeightToe": 28,
+      "dropMm": 9,
+      "carbonPlate": true,
+      "widthOptions": ["standard"]
+    },
+    "scores": {
+      "cushioning": 7,
+      "responsiveness": 8.5,
+      "stability": 6.5,
+      "durability": 6,
+      "valueForMoney": 6,
+      "overall": 8
+    },
+    "tags": {
+      "useCase": ["race-day"],
+      "terrain": ["road"],
+      "distanceSuitability": ["half", "marathon"],
+      "runnerLevel": ["intermediate", "advanced"],
+      "pronationSuitability": ["neutral"],
+      "personaFit": ["race-trainer", "pb-chaser", "running-smart"],
+      "conditionSuitability": []
+    },
+    "rideFeel": { "cushion": 70, "response": 85, "stability": 60 },
+    "genderFit": ["all"],
+    "editorial": {
+      "verdict": "On's carbon racer has finally come of age — a unique heel-to-toe geometry that rewards efficient form.",
+      "realTalkTags": ["Carbon plate", "On's flagship racer", "Distinctive ride"],
+      "whoThisIsFor": "On Running fans who want to race in a shoe from the brand they train in.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",
+      "altText": "On Cloudboom Echo 3 carbon race shoe",
+      "gallery": []
+    }
+  },
+  {
+    "id": "on-cloudmonster-2",
+    "name": "On Cloudmonster 2",
+    "brand": "On",
+    "version": "2",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 289,
+      "stackHeightHeel": 35,
+      "stackHeightToe": 29,
+      "dropMm": 6,
+      "carbonPlate": false,
+      "widthOptions": ["standard"]
+    },
+    "scores": {
+      "cushioning": 8.5,
+      "responsiveness": 6.5,
+      "stability": 6.5,
+      "durability": 8,
+      "valueForMoney": 7.5,
+      "overall": 7.5
+    },
+    "tags": {
+      "useCase": ["daily-trainer", "long-run"],
+      "terrain": ["road"],
+      "distanceSuitability": ["10k", "half", "marathon"],
+      "runnerLevel": ["beginner", "intermediate"],
+      "pronationSuitability": ["neutral"],
+      "personaFit": ["new-runner", "parkrunner", "running-smart"],
+      "conditionSuitability": []
+    },
+    "rideFeel": { "cushion": 85, "response": 65, "stability": 62 },
+    "genderFit": ["all"],
+    "editorial": {
+      "verdict": "On's most cushioned daily trainer — the Speedboard adds propulsion to an otherwise plush ride.",
+      "realTalkTags": ["Cloud cushion", "Surprisingly bouncy", "Plush long-run shoe"],
+      "whoThisIsFor": "Runners who want On's distinctive cloud cushioning in a high-mileage daily trainer.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&q=80",
+      "altText": "On Cloudmonster 2 daily trainer",
+      "gallery": []
+    }
+  },
+  {
+    "id": "asics-novablast-4",
+    "name": "Asics Novablast 4",
+    "brand": "Asics",
+    "version": "4",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 267,
+      "stackHeightHeel": 42,
+      "stackHeightToe": 34,
+      "dropMm": 8,
+      "carbonPlate": false,
+      "widthOptions": ["standard", "wide"]
+    },
+    "scores": {
+      "cushioning": 8.5,
+      "responsiveness": 7.5,
+      "stability": 6.5,
+      "durability": 8,
+      "valueForMoney": 8.5,
+      "overall": 8
+    },
+    "tags": {
+      "useCase": ["daily-trainer", "tempo"],
+      "terrain": ["road"],
+      "distanceSuitability": ["10k", "half", "marathon"],
+      "runnerLevel": ["beginner", "intermediate", "advanced"],
+      "pronationSuitability": ["neutral"],
+      "personaFit": ["new-runner", "parkrunner", "race-trainer", "pb-chaser", "running-smart"],
+      "conditionSuitability": []
+    },
+    "rideFeel": { "cushion": 88, "response": 72, "stability": 61 },
+    "genderFit": ["all"],
+    "editorial": {
+      "verdict": "The bounciest shoe Asics make — sits perfectly between a daily trainer and a tempo shoe.",
+      "realTalkTags": ["High stack", "Bouncy FF Blast+", "Tempo-capable trainer"],
+      "whoThisIsFor": "Runners who want something between a plush daily trainer and a tempo shoe without paying race-shoe prices.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&q=80",
+      "altText": "Asics Novablast 4 bouncy running shoe",
+      "gallery": []
+    }
+  },
+  {
+    "id": "asics-gel-nimbus-26",
+    "name": "Asics Gel-Nimbus 26",
+    "brand": "Asics",
+    "version": "26",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 314,
+      "stackHeightHeel": 42,
+      "stackHeightToe": 34,
+      "dropMm": 8,
+      "carbonPlate": false,
+      "widthOptions": ["standard", "wide", "extra-wide"]
+    },
+    "scores": {
+      "cushioning": 9.5,
+      "responsiveness": 5,
+      "stability": 7,
+      "durability": 9,
+      "valueForMoney": 7.5,
+      "overall": 7.5
+    },
+    "tags": {
+      "useCase": ["daily-trainer", "recovery"],
+      "terrain": ["road"],
+      "distanceSuitability": ["10k", "half", "marathon"],
+      "runnerLevel": ["beginner", "intermediate"],
+      "pronationSuitability": ["neutral", "mild-overpronation"],
+      "personaFit": ["new-runner", "parkrunner", "trail-runner", "running-smart"],
+      "conditionSuitability": []
+    },
+    "rideFeel": { "cushion": 94, "response": 50, "stability": 68 },
+    "genderFit": ["all"],
+    "editorial": {
+      "verdict": "Asics' most protective daily trainer — the closest thing to running on memory foam.",
+      "realTalkTags": ["Maximum cushion", "Heaviest in class", "Injury-prevention training"],
+      "whoThisIsFor": "High-mileage runners or those coming back from injury who need maximum leg protection.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&q=80",
+      "altText": "Asics Gel-Nimbus 26 maximum cushion daily trainer",
+      "gallery": []
+    }
+  },
+  {
+    "id": "brooks-hyperion-max-2",
+    "name": "Brooks Hyperion Max 2",
+    "brand": "Brooks",
+    "version": "2",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 258,
+      "stackHeightHeel": 36,
+      "stackHeightToe": 30,
+      "dropMm": 6,
+      "carbonPlate": false,
+      "widthOptions": ["standard"]
+    },
+    "scores": {
+      "cushioning": 7,
+      "responsiveness": 8,
+      "stability": 6.5,
+      "durability": 7.5,
+      "valueForMoney": 8,
+      "overall": 7.5
+    },
+    "tags": {
+      "useCase": ["tempo", "daily-trainer"],
+      "terrain": ["road"],
+      "distanceSuitability": ["5k", "10k", "half", "marathon"],
+      "runnerLevel": ["intermediate", "advanced"],
+      "pronationSuitability": ["neutral"],
+      "personaFit": ["race-trainer", "pb-chaser", "parkrunner", "running-smart"],
+      "conditionSuitability": []
+    },
+    "rideFeel": { "cushion": 70, "response": 78, "stability": 68 },
+    "genderFit": ["all"],
+    "editorial": {
+      "verdict": "Brooks' fastest non-carbon shoe — a tempo workhorse with enough cushion for longer efforts.",
+      "realTalkTags": ["Nylon plate", "Brooks' best tempo trainer", "Surprisingly fast"],
+      "whoThisIsFor": "Brooks fans who want a fast training shoe that bridges the gap to race day without going full carbon.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&q=80",
+      "altText": "Brooks Hyperion Max 2 tempo running shoe",
+      "gallery": []
+    }
+  },
+  {
+    "id": "new-balance-sc-elite-v4",
+    "name": "New Balance SC Elite v4",
+    "brand": "New Balance",
+    "version": "4",
+    "year": 2024,
+    "supersededBy": null,
+    "specs": {
+      "weightGrams": 237,
+      "stackHeightHeel": 40,
+      "stackHeightToe": 36,
+      "dropMm": 4,
+      "carbonPlate": true,
+      "widthOptions": ["standard"]
+    },
+    "scores": {
+      "cushioning": 8,
+      "responsiveness": 9,
+      "stability": 7,
+      "durability": 6.5,
+      "valueForMoney": 7,
+      "overall": 8.5
+    },
+    "tags": {
+      "useCase": ["race-day"],
+      "terrain": ["road"],
+      "distanceSuitability": ["half", "marathon"],
+      "runnerLevel": ["intermediate", "advanced"],
+      "pronationSuitability": ["neutral"],
+      "personaFit": ["pb-chaser", "race-trainer", "parkrunner"],
+      "conditionSuitability": []
+    },
+    "rideFeel": { "cushion": 76, "response": 88, "stability": 70 },
+    "genderFit": ["all"],
+    "editorial": {
+      "verdict": "New Balance's flagship carbon racer — more stable than the Alphafly with superb energy return.",
+      "realTalkTags": ["Carbon Energy ARC", "Plush racer", "More stable than Vaporfly"],
+      "whoThisIsFor": "Runners who want a stable carbon race shoe with maximum energy return and a comfortable upper.",
+      "longFormReview": ""
+    },
+    "media": {
+      "primaryImage": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",
+      "altText": "New Balance SC Elite v4 carbon race shoe",
       "gallery": []
     }
   }
