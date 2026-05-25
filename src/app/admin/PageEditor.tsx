@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useTransition } from 'react'
-import type { HubPageData, SpokePageData, FAQ, EditorialBox, HubShoeRecommendation, SpokeShoeRecommendation, ShoeFeature } from '@/types/cms'
+import type { HubPageData, SpokePageData, FAQ, EditorialBox, SpokeShoeRecommendation, ShoeFeature } from '@/types/cms'
 import type { Shoe } from '@/types/shoe'
 import { savePageAction } from './actions'
 
@@ -111,65 +111,6 @@ function RideFeelSliders({ rideFeel, onChange }: {
   )
 }
 
-function HubRecsEditor({ recs, shoes, onChange }: { recs: HubShoeRecommendation[]; shoes: Shoe[]; onChange: (v: HubShoeRecommendation[]) => void }) {
-  const defaultRec: HubShoeRecommendation = { shoeId: shoes[0]?.id ?? '', bannerType: 'top', bannerLabel: '', whyThisWorks: '', features: [], tags: [], rideFeel: { cushion: 70, response: 70, stability: 60 } }
-  return (
-    <div>
-      {recs.map((rec, i) => {
-        const shoeName = shoes.find(s => s.id === rec.shoeId)?.name ?? rec.shoeId
-        return (
-          <div key={i} style={{ marginBottom: 16, border: '1px solid var(--ink-200)', borderRadius: 10, padding: '16px 18px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-              <span style={{ fontWeight: 600, fontSize: 14, color: 'var(--ink-800)' }}>{shoeName}</span>
-              <button type="button" onClick={() => onChange(recs.filter((_, j) => j !== i))}
-                style={{ fontSize: 12, color: '#b91c1c', border: 'none', background: 'none', cursor: 'pointer' }}>Remove</button>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 100px 1fr', gap: 10, marginBottom: 10 }}>
-              <div>
-                <label style={lbl}>Shoe</label>
-                <select value={rec.shoeId} onChange={e => { const n = [...recs]; n[i] = { ...rec, shoeId: e.target.value }; onChange(n) }} style={{ ...inp }}>
-                  {shoes.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
-                </select>
-              </div>
-              <div>
-                <label style={lbl}>Banner type</label>
-                <div style={{ display: 'flex', gap: 4 }}>
-                  {(['top', 'alt'] as const).map(t => (
-                    <button key={t} type="button" onClick={() => { const n = [...recs]; n[i] = { ...rec, bannerType: t }; onChange(n) }}
-                      style={{ flex: 1, padding: '8px 0', borderRadius: 6, border: `1.5px solid ${rec.bannerType === t ? 'var(--orange-500)' : 'var(--ink-200)'}`, background: rec.bannerType === t ? 'var(--orange-50)' : 'transparent', color: rec.bannerType === t ? 'var(--orange-700)' : 'var(--ink-500)', fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>{t}</button>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <label style={lbl}>Banner label</label>
-                <input value={rec.bannerLabel} onChange={e => { const n = [...recs]; n[i] = { ...rec, bannerLabel: e.target.value }; onChange(n) }} style={inp} />
-              </div>
-            </div>
-            <div style={{ marginBottom: 10 }}>
-              <label style={lbl}>Why this works</label>
-              <textarea value={rec.whyThisWorks} onChange={e => { const n = [...recs]; n[i] = { ...rec, whyThisWorks: e.target.value }; onChange(n) }} style={{ ...ta, minHeight: 60 }} />
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-              <div>
-                <label style={lbl}>Features (pros/cons)</label>
-                <FeaturesEditor features={rec.features} onChange={v => { const n = [...recs]; n[i] = { ...rec, features: v }; onChange(n) }} />
-              </div>
-              <div>
-                <label style={lbl}>Ride feel</label>
-                <RideFeelSliders rideFeel={rec.rideFeel} onChange={v => { const n = [...recs]; n[i] = { ...rec, rideFeel: v }; onChange(n) }} />
-              </div>
-            </div>
-          </div>
-        )
-      })}
-      <button type="button" onClick={() => onChange([...recs, { ...defaultRec }])}
-        style={{ width: '100%', padding: '10px', borderRadius: 8, border: '1.5px dashed var(--ink-300)', background: 'none', color: 'var(--ink-500)', fontSize: 13, cursor: 'pointer' }}>
-        + Add shoe pick
-      </button>
-    </div>
-  )
-}
-
 function SpokeRecsEditor({ recs, shoes, onChange }: { recs: SpokeShoeRecommendation[]; shoes: Shoe[]; onChange: (v: SpokeShoeRecommendation[]) => void }) {
   const defaultRec: SpokeShoeRecommendation = { shoeId: shoes[0]?.id ?? '', rank: recs.length + 1, bannerType: 'top', bannerLabel: '', verdict: '', whyThisWorks: '', features: [], realTalkTags: [], tags: [], priceTier: '££', priceChecked: new Date().toISOString().slice(0, 10), rideFeel: { cushion: 70, response: 70, stability: 60 } }
   return (
@@ -227,7 +168,7 @@ function SpokeRecsEditor({ recs, shoes, onChange }: { recs: SpokeShoeRecommendat
 
 // ── Hub page editor ────────────────────────────────────────────────────────────
 
-function HubEditor({ initial, shoes, onBack }: { initial: HubPageData; shoes: Shoe[]; onBack: () => void }) {
+function HubEditor({ initial, onBack }: { initial: HubPageData; shoes: Shoe[]; onBack: () => void }) {
   const [page, setPage] = useState<HubPageData>(initial)
   const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle')
   const [errMsg, setErrMsg] = useState('')
@@ -284,7 +225,9 @@ function HubEditor({ initial, shoes, onBack }: { initial: HubPageData; shoes: Sh
 
         <div>
           <SectionHead title="Shoe picks" />
-          <HubRecsEditor recs={page.shoeRecommendations} shoes={shoes} onChange={v => setPage(p => ({ ...p, shoeRecommendations: v }))} />
+          <div style={{ padding: '14px 16px', background: 'var(--orange-50)', border: '1px solid var(--orange-200)', borderRadius: 8, fontSize: 13.5, color: 'var(--orange-700)' }}>
+            Shoe picks for hub pages are managed in the <strong>Recs</strong> tab — use the &ldquo;← Pages&rdquo; back button and click <strong>Recs</strong> next to this page.
+          </div>
         </div>
 
         <div>
