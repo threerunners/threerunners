@@ -1,197 +1,192 @@
 'use client'
 
 import { useState, useTransition } from 'react'
-import { savePageAction, saveShoeAction, saveConfigAction, addUserAction, removeUserAction } from './actions'
+import type { Shoe } from '@/types/shoe'
+import { deletePageAction, savePageAction } from './actions'
+import ShoeEditor from './ShoeEditor'
+import PageEditor from './PageEditor'
+import ConfigEditor from './ConfigEditor'
+import UserManager from './UserManager'
 
-interface Section {
-  id: string
-  label: string
-  type: 'page' | 'shoe' | 'config' | 'users'
-  pageType?: string
-  description: string
-  initialJson?: string
-}
+type PageRow = { id: string; type: string; data: string }
 
 interface AdminPanelProps {
-  sections: Section[]
+  shoes: Shoe[]
+  pages: PageRow[]
+  config: Array<{ key: string; value: string }>
   users: Array<{ username: string; createdAt: number }>
   currentUser: string
 }
 
-function JsonEditor({ section }: { section: Section }) {
-  const [json, setJson] = useState(section.initialJson || '')
-  const [status, setStatus] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle')
-  const [errorMsg, setErrorMsg] = useState('')
+type Tab = 'shoes' | 'pages' | 'config' | 'users'
+type Screen =
+  | { tab: 'shoes'; editing: string | null }
+  | { tab: 'pages'; editing: string | null; creating: boolean }
+  | { tab: 'config' }
+  | { tab: 'users' }
+
+const DEFAULT_HUB = (id: string): object => ({
+  id, slug: id, pillarType: 'distance', title: 'New Hub Page', subtitle: '',
+  metaTitle: `New Hub Page | The Run Down`, metaDescription: '',
+  canonicalUrl: `/${id}`, lastUpdated: new Date().toISOString().slice(0, 10),
+  personasShown: [], defaultPersona: '', subNavTabs: [], whoThisIsFor: '',
+  editorialBoxes: [], findYourFitCategories: [], comparisonTableColumns: [],
+  shoeRecommendations: [], comparisonRows: [], faqs: [], author: 'ashley-morgan', exploreLinks: [],
+})
+
+const DEFAULT_SPOKE = (id: string): object => ({
+  id, slug: id, parentHub: 'marathon', pillarType: 'distance',
+  title: 'New Guide', italicWord: '', subtitle: '',
+  metaTitle: 'New Guide | The Run Down', metaDescription: '',
+  canonicalUrl: `/marathon/${id}`, lastUpdated: new Date().toISOString().slice(0, 10),
+  author: 'ashley-morgan', whoThisIsFor: '', shoeRecommendations: [],
+  editorialTitle: 'Our take', editorialTitleItalic: '', editorialBody: '',
+  editorialAttribution: '', faqIntro: '', faqs: [], siblingSpokes: [],
+  comparisonTable: { title: 'Quick comparison', subtitle: '', rows: [] },
+})
+
+function TabBtn({ label, count, active, onClick }: { label: string; count?: number; active: boolean; onClick: () => void }) {
+  return (
+    <button onClick={onClick} style={{ padding: '14px 20px', border: 'none', borderBottom: `2px solid ${active ? 'var(--orange-500)' : 'transparent'}`, background: 'none', color: active ? 'var(--orange-600)' : 'var(--ink-500)', fontWeight: active ? 700 : 400, fontSize: 14, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6 }}>
+      {label}
+      {count !== undefined && <span style={{ fontSize: 11, background: active ? 'var(--orange-100)' : 'var(--ink-100)', color: active ? 'var(--orange-700)' : 'var(--ink-500)', borderRadius: 10, padding: '1px 7px', fontWeight: 600 }}>{count}</span>}
+    </button>
+  )
+}
+
+function ShoeList({ shoes, onEdit }: { shoes: Shoe[]; onEdit: (id: string) => void }) {
+  return (
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 12 }}>
+      {shoes.map(shoe => (
+        <button key={shoe.id} onClick={() => onEdit(shoe.id)}
+          style={{ textAlign: 'left', background: 'var(--paper)', border: '1px solid var(--ink-200)', borderRadius: 10, padding: '16px 18px', cursor: 'pointer' }}
+          onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--orange-400)')}
+          onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--ink-200)')}>
+          <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--ink-400)', textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 4 }}>{shoe.brand}</div>
+          <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--ink-900)', marginBottom: 2 }}>{shoe.name}</div>
+          <div style={{ fontSize: 12, color: 'var(--ink-400)', marginBottom: 10 }}>v{shoe.version} · {shoe.year}</div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div style={{ display: 'flex', gap: 6 }}>
+              {shoe.tags.useCase.slice(0, 2).map(t => (
+                <span key={t} style={{ fontSize: 11, padding: '2px 8px', borderRadius: 20, background: 'var(--ink-100)', color: 'var(--ink-600)' }}>{t}</span>
+              ))}
+            </div>
+            <span style={{ fontSize: 16, fontWeight: 800, color: 'var(--orange-600)' }}>{shoe.scores.overall}<span style={{ fontSize: 11, fontWeight: 400, color: 'var(--ink-400)' }}>/10</span></span>
+          </div>
+        </button>
+      ))}
+    </div>
+  )
+}
+
+function PageList({ pages, onEdit, onDelete, onNew }: {
+  pages: PageRow[]
+  onEdit: (id: string) => void
+  onDelete: (id: string) => void
+  onNew: () => void
+}) {
+  const [deleting, setDeleting] = useState<string | null>(null)
   const [isPending, startTransition] = useTransition()
 
-  async function save() {
-    setStatus('saving')
-    setErrorMsg('')
-    try {
-      JSON.parse(json) // client-side validation
-    } catch (e) {
-      setStatus('error')
-      setErrorMsg('Invalid JSON: ' + (e as Error).message)
-      return
-    }
+  function del(id: string) {
+    if (!confirm(`Delete page "${id}"? This cannot be undone.`)) return
+    setDeleting(id)
     startTransition(async () => {
-      try {
-        if (section.type === 'page') await savePageAction(section.id, section.pageType!, json)
-        else if (section.type === 'shoe') await saveShoeAction(section.id, json)
-        else if (section.type === 'config') await saveConfigAction(section.id, json)
-        setStatus('saved')
-        setTimeout(() => setStatus('idle'), 2000)
-      } catch (e) {
-        setStatus('error')
-        setErrorMsg((e as Error).message)
-      }
+      try { await deletePageAction(id); onDelete(id) }
+      catch (e) { alert('Error: ' + (e as Error).message) }
+      finally { setDeleting(null) }
     })
   }
 
   return (
     <div>
-      <p style={{ fontSize: 13, color: 'var(--ink-500)', margin: '0 0 14px' }}>{section.description}</p>
-      <textarea
-        value={json}
-        onChange={e => { setJson(e.target.value); setStatus('idle') }}
-        spellCheck={false}
-        style={{
-          width: '100%', minHeight: 420, fontFamily: 'monospace', fontSize: 12.5,
-          lineHeight: 1.6, padding: 16, borderRadius: 'var(--radius)',
-          border: '1.5px solid var(--ink-200)', background: 'var(--ink-50)',
-          color: 'var(--ink-900)', resize: 'vertical', boxSizing: 'border-box', outline: 'none',
-        }}
-      />
-      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 10 }}>
-        <button
-          onClick={save}
-          disabled={isPending || status === 'saving'}
-          style={{
-            padding: '9px 22px', borderRadius: 'var(--radius)', border: 'none', cursor: 'pointer',
-            background: status === 'saved' ? 'var(--green-600)' : 'var(--orange-500)',
-            color: 'var(--orange-200)', fontSize: 13.5, fontWeight: 600,
-          }}
-        >
-          {status === 'saving' || isPending ? 'Saving…' : status === 'saved' ? '✓ Saved' : 'Save to Turso'}
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 16 }}>
+        <button onClick={onNew} style={{ padding: '9px 18px', borderRadius: 'var(--radius)', border: 'none', background: 'var(--orange-500)', color: 'var(--orange-200)', fontSize: 13.5, fontWeight: 600, cursor: 'pointer' }}>
+          + New page
         </button>
-        {status === 'error' && (
-          <span style={{ fontSize: 13, color: 'var(--red-700)' }}>{errorMsg}</span>
-        )}
+      </div>
+      <div style={{ background: 'var(--paper)', border: '1px solid var(--ink-200)', borderRadius: 'var(--radius-lg)', overflow: 'hidden' }}>
+        {pages.map((p, i) => {
+          const title = (() => { try { return (JSON.parse(p.data) as { title?: string }).title ?? p.id } catch { return p.id } })()
+          return (
+            <div key={p.id} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 18px', borderBottom: i < pages.length - 1 ? '1px solid var(--ink-100)' : 'none' }}>
+              <span style={{ fontSize: 11, fontWeight: 700, padding: '3px 8px', borderRadius: 20, background: p.type === 'hub' ? 'var(--orange-50)' : 'var(--ink-100)', color: p.type === 'hub' ? 'var(--orange-700)' : 'var(--ink-500)', textTransform: 'uppercase', letterSpacing: '.06em', flexShrink: 0 }}>{p.type}</span>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--ink-900)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{title}</div>
+                <div style={{ fontSize: 11, color: 'var(--ink-400)', fontFamily: 'monospace' }}>{p.id}</div>
+              </div>
+              <div style={{ display: 'flex', gap: 8, flexShrink: 0 }}>
+                <button onClick={() => onEdit(p.id)} style={{ padding: '6px 14px', borderRadius: 8, border: '1.5px solid var(--orange-300)', background: 'var(--orange-50)', color: 'var(--orange-700)', fontSize: 12.5, fontWeight: 600, cursor: 'pointer' }}>Edit</button>
+                <button onClick={() => del(p.id)} disabled={isPending && deleting === p.id} style={{ padding: '6px 12px', borderRadius: 8, border: '1px solid #fecaca', background: '#fff', color: '#b91c1c', fontSize: 12.5, fontWeight: 600, cursor: 'pointer' }}>
+                  {deleting === p.id ? '…' : 'Delete'}
+                </button>
+              </div>
+            </div>
+          )
+        })}
+        {pages.length === 0 && <div style={{ padding: '32px', textAlign: 'center', color: 'var(--ink-400)', fontSize: 13 }}>No pages yet.</div>}
       </div>
     </div>
   )
 }
 
-function UserManager({ users, currentUser }: { users: AdminPanelProps['users']; currentUser: string }) {
-  const [newUsername, setNewUsername] = useState('')
-  const [newPassword, setNewPassword] = useState('')
-  const [status, setStatus] = useState('')
-  const [isPending, startTransition] = useTransition()
+function NewPageForm({ onCreated, onCancel }: { onCreated: (page: PageRow) => void; onCancel: () => void }) {
+  const [id, setId] = useState('')
+  const [type, setType] = useState<'hub' | 'spoke'>('hub')
+  const [saving, setSaving] = useState(false)
+  const [err, setErr] = useState('')
 
-  function addUser() {
-    setStatus('')
-    startTransition(async () => {
-      try {
-        await addUserAction(newUsername, newPassword)
-        setNewUsername('')
-        setNewPassword('')
-        setStatus('User added — refresh to see')
-      } catch (e) {
-        setStatus('Error: ' + (e as Error).message)
-      }
-    })
-  }
-
-  function removeUser(username: string) {
-    if (!confirm(`Delete user "${username}"?`)) return
-    startTransition(async () => {
-      try {
-        await removeUserAction(username)
-        setStatus(`Deleted ${username} — refresh to update list`)
-      } catch (e) {
-        setStatus('Error: ' + (e as Error).message)
-      }
-    })
+  async function create() {
+    if (!id.trim()) { setErr('Page ID is required'); return }
+    if (!/^[a-z0-9-]+$/.test(id)) { setErr('ID must be lowercase letters, numbers and hyphens only'); return }
+    setSaving(true); setErr('')
+    const data = type === 'hub' ? DEFAULT_HUB(id) : DEFAULT_SPOKE(id)
+    const json = JSON.stringify(data)
+    try {
+      await savePageAction(id, type, json)
+      onCreated({ id, type, data: json })
+    } catch (e) { setErr((e as Error).message); setSaving(false) }
   }
 
   return (
-    <div>
-      <p style={{ fontSize: 13, color: 'var(--ink-500)', margin: '0 0 20px' }}>
-        Manage who can log in to the admin panel.
-      </p>
-
-      {/* Current users */}
-      <div style={{ marginBottom: 28 }}>
-        <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--ink-500)', marginBottom: 10 }}>
-          Current users
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          {users.map(u => (
-            <div key={u.username} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'var(--ink-50)', borderRadius: 'var(--radius)', padding: '10px 14px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <div style={{ width: 32, height: 32, borderRadius: '50%', background: 'var(--orange-500)', color: 'var(--orange-200)', display: 'grid', placeItems: 'center', fontSize: 11, fontWeight: 700 }}>
-                  {u.username.slice(0, 2).toUpperCase()}
-                </div>
-                <div>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--ink-900)' }}>
-                    {u.username}
-                    {u.username === currentUser && (
-                      <span style={{ marginLeft: 8, fontSize: 11, color: 'var(--ink-500)', fontWeight: 400 }}>(you)</span>
-                    )}
-                  </div>
-                  <div style={{ fontSize: 11, color: 'var(--ink-400)' }}>
-                    Added {new Date(u.createdAt * 1000).toLocaleDateString('en-GB')}
-                  </div>
-                </div>
-              </div>
-              {u.username !== currentUser && (
-                <button
-                  onClick={() => removeUser(u.username)}
-                  disabled={isPending}
-                  style={{ padding: '6px 12px', borderRadius: 8, border: '1px solid #fecaca', background: '#fff', color: '#b91c1c', fontSize: 12.5, fontWeight: 600, cursor: 'pointer' }}
-                >
-                  Remove
-                </button>
-              )}
-            </div>
+    <div style={{ background: 'var(--paper)', border: '1px solid var(--ink-200)', borderRadius: 'var(--radius-lg)', padding: '24px 28px', maxWidth: 480 }}>
+      <h2 style={{ fontSize: 18, fontWeight: 700, margin: '0 0 20px', color: 'var(--ink-900)' }}>New page</h2>
+      <div style={{ marginBottom: 16 }}>
+        <label style={{ display: 'block', fontSize: 11, fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase', color: 'var(--ink-500)', marginBottom: 5 }}>Page ID (URL slug)</label>
+        <input value={id} onChange={e => setId(e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, '-'))}
+          placeholder="e.g. 5k or marathon-beginners-women"
+          style={{ width: '100%', padding: '10px 12px', borderRadius: 'var(--radius)', border: '1.5px solid var(--ink-200)', fontSize: 14, outline: 'none', boxSizing: 'border-box' }} />
+      </div>
+      <div style={{ marginBottom: 20 }}>
+        <label style={{ display: 'block', fontSize: 11, fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase', color: 'var(--ink-500)', marginBottom: 8 }}>Page type</label>
+        <div style={{ display: 'flex', gap: 8 }}>
+          {(['hub', 'spoke'] as const).map(t => (
+            <button key={t} type="button" onClick={() => setType(t)}
+              style={{ flex: 1, padding: '10px', borderRadius: 8, border: `1.5px solid ${type === t ? 'var(--orange-500)' : 'var(--ink-200)'}`, background: type === t ? 'var(--orange-50)' : 'transparent', color: type === t ? 'var(--orange-700)' : 'var(--ink-500)', fontWeight: type === t ? 700 : 400, fontSize: 14, cursor: 'pointer' }}>
+              {t === 'hub' ? 'Hub page' : 'Spoke / guide'}
+            </button>
           ))}
         </div>
+        <p style={{ fontSize: 12, color: 'var(--ink-400)', margin: '8px 0 0' }}>
+          {type === 'hub' ? 'Hub pages list multiple shoes (e.g. /marathon).' : 'Spoke pages focus on a specific need (e.g. /marathon/beginners).'}
+        </p>
       </div>
-
-      {/* Add user */}
-      <div style={{ background: 'var(--paper)', border: '1px solid var(--ink-200)', borderRadius: 'var(--radius)', padding: '18px 20px' }}>
-        <div style={{ fontSize: 13.5, fontWeight: 600, color: 'var(--ink-900)', marginBottom: 14 }}>Add new user</div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 12 }}>
-          <input
-            placeholder="Username"
-            value={newUsername}
-            onChange={e => setNewUsername(e.target.value)}
-            style={{ padding: '9px 12px', borderRadius: 'var(--radius)', border: '1.5px solid var(--ink-200)', fontSize: 13.5, outline: 'none' }}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={newPassword}
-            onChange={e => setNewPassword(e.target.value)}
-            style={{ padding: '9px 12px', borderRadius: 'var(--radius)', border: '1.5px solid var(--ink-200)', fontSize: 13.5, outline: 'none' }}
-          />
-        </div>
-        <button
-          onClick={addUser}
-          disabled={isPending || !newUsername || !newPassword}
-          style={{ padding: '9px 20px', borderRadius: 'var(--radius)', border: 'none', background: 'var(--orange-500)', color: 'var(--orange-200)', fontSize: 13.5, fontWeight: 600, cursor: 'pointer' }}
-        >
-          {isPending ? 'Adding…' : 'Add user'}
+      {err && <div style={{ marginBottom: 12, fontSize: 13, color: '#b91c1c' }}>{err}</div>}
+      <div style={{ display: 'flex', gap: 10 }}>
+        <button onClick={create} disabled={saving} style={{ padding: '10px 22px', borderRadius: 'var(--radius)', border: 'none', background: 'var(--orange-500)', color: 'var(--orange-200)', fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>
+          {saving ? 'Creating…' : 'Create page'}
         </button>
-        {status && <div style={{ marginTop: 10, fontSize: 13, color: status.startsWith('Error') ? 'var(--red-700)' : 'var(--green-600)' }}>{status}</div>}
+        <button onClick={onCancel} style={{ padding: '10px 16px', borderRadius: 'var(--radius)', border: '1.5px solid var(--ink-200)', background: 'transparent', color: 'var(--ink-600)', fontSize: 14, cursor: 'pointer' }}>Cancel</button>
       </div>
     </div>
   )
 }
 
-export default function AdminPanel({ sections, users, currentUser }: AdminPanelProps) {
-  const [activeId, setActiveId] = useState(sections[0]?.id || '')
-  const activeSection = sections.find(s => s.id === activeId)
+export default function AdminPanel({ shoes: initialShoes, pages: initialPages, config, users, currentUser }: AdminPanelProps) {
+  const [screen, setScreen] = useState<Screen>({ tab: 'shoes', editing: null })
+  const [pages, setPages] = useState<PageRow[]>(initialPages)
+
+  const activeTab: Tab = screen.tab
 
   async function logout() {
     await fetch('/api/admin/logout', { method: 'POST' })
@@ -208,51 +203,80 @@ export default function AdminPanel({ sections, users, currentUser }: AdminPanelP
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
           <span style={{ fontSize: 13, opacity: .7 }}>Signed in as <strong>{currentUser}</strong></span>
-          <button onClick={logout} style={{ fontSize: 12.5, color: 'rgba(157,255,197,.75)', background: 'none', border: '1px solid rgba(157,255,197,.3)', padding: '5px 12px', borderRadius: 6, cursor: 'pointer' }}>
-            Sign out
-          </button>
+          <button onClick={logout} style={{ fontSize: 12.5, color: 'rgba(157,255,197,.75)', background: 'none', border: '1px solid rgba(157,255,197,.3)', padding: '5px 12px', borderRadius: 6, cursor: 'pointer' }}>Sign out</button>
         </div>
       </div>
 
-      <div style={{ display: 'flex', maxWidth: 1200, margin: '0 auto', padding: 24, gap: 24, alignItems: 'flex-start' }}>
-        {/* Sidebar */}
-        <nav style={{ width: 220, flexShrink: 0, background: 'var(--paper)', border: '1px solid var(--ink-200)', borderRadius: 'var(--radius-lg)', padding: '12px 8px', position: 'sticky', top: 24 }}>
-          {[
-            { heading: 'Pages', ids: sections.filter(s => s.type === 'page').map(s => s.id) },
-            { heading: 'Shoe data', ids: sections.filter(s => s.type === 'shoe').map(s => s.id) },
-            { heading: 'Config', ids: sections.filter(s => s.type === 'config').map(s => s.id) },
-            { heading: 'Users', ids: sections.filter(s => s.type === 'users').map(s => s.id) },
-          ].map(group => group.ids.length > 0 && (
-            <div key={group.heading} style={{ marginBottom: 16 }}>
-              <div style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--ink-400)', padding: '4px 12px', marginBottom: 2 }}>
-                {group.heading}
-              </div>
-              {group.ids.map(id => {
-                const s = sections.find(x => x.id === id)!
-                return (
-                  <button key={id} onClick={() => setActiveId(id)} style={{ width: '100%', textAlign: 'left', padding: '8px 12px', borderRadius: 8, border: 'none', cursor: 'pointer', background: activeId === id ? 'var(--orange-50)' : 'transparent', color: activeId === id ? 'var(--orange-700)' : 'var(--ink-700)', fontSize: 13.5, fontWeight: activeId === id ? 600 : 400, display: 'block', marginBottom: 2 }}>
-                    {s.label}
-                  </button>
-                )
-              })}
-            </div>
-          ))}
-        </nav>
+      {/* Tab bar */}
+      <div style={{ background: 'var(--paper)', borderBottom: '1px solid var(--ink-200)', padding: '0 28px', display: 'flex', gap: 4 }}>
+        <TabBtn label="Shoes" count={initialShoes.length} active={activeTab === 'shoes'} onClick={() => setScreen({ tab: 'shoes', editing: null })} />
+        <TabBtn label="Pages" count={pages.length} active={activeTab === 'pages'} onClick={() => setScreen({ tab: 'pages', editing: null, creating: false })} />
+        <TabBtn label="Config" active={activeTab === 'config'} onClick={() => setScreen({ tab: 'config' })} />
+        <TabBtn label="Users" active={activeTab === 'users'} onClick={() => setScreen({ tab: 'users' })} />
+      </div>
 
-        {/* Main panel */}
-        <div style={{ flex: 1 }}>
-          <div style={{ background: 'var(--paper)', border: '1px solid var(--ink-200)', borderRadius: 'var(--radius-lg)', padding: '24px 28px' }}>
-            <h1 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 20px', color: 'var(--ink-900)' }}>
-              {activeSection?.label}
-            </h1>
+      {/* Content */}
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '28px 24px' }}>
 
-            {activeSection?.type === 'users' ? (
-              <UserManager users={users} currentUser={currentUser} />
-            ) : activeSection ? (
-              <JsonEditor section={activeSection} />
-            ) : null}
+        {/* Shoes */}
+        {screen.tab === 'shoes' && screen.editing === null && (
+          <div>
+            <h1 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 20px', color: 'var(--ink-900)' }}>Shoes</h1>
+            <ShoeList shoes={initialShoes} onEdit={id => setScreen({ tab: 'shoes', editing: id })} />
           </div>
-        </div>
+        )}
+        {screen.tab === 'shoes' && screen.editing !== null && (() => {
+          const shoe = initialShoes.find(s => s.id === screen.editing)
+          return shoe ? <ShoeEditor shoe={shoe} onBack={() => setScreen({ tab: 'shoes', editing: null })} /> : null
+        })()}
+
+        {/* Pages */}
+        {screen.tab === 'pages' && !screen.creating && screen.editing === null && (
+          <div>
+            <h1 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 20px', color: 'var(--ink-900)' }}>Pages</h1>
+            <PageList
+              pages={pages}
+              onEdit={id => setScreen({ tab: 'pages', editing: id, creating: false })}
+              onDelete={id => setPages(prev => prev.filter(p => p.id !== id))}
+              onNew={() => setScreen({ tab: 'pages', editing: null, creating: true })}
+            />
+          </div>
+        )}
+        {screen.tab === 'pages' && screen.creating && (
+          <div>
+            <h1 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 20px', color: 'var(--ink-900)' }}>New page</h1>
+            <NewPageForm
+              onCreated={page => { setPages(prev => [...prev, page]); setScreen({ tab: 'pages', editing: page.id, creating: false }) }}
+              onCancel={() => setScreen({ tab: 'pages', editing: null, creating: false })}
+            />
+          </div>
+        )}
+        {screen.tab === 'pages' && !screen.creating && screen.editing !== null && (() => {
+          const page = pages.find(p => p.id === screen.editing)
+          return page
+            ? <PageEditor pageId={page.id} pageType={page.type} pageData={page.data} shoes={initialShoes} onBack={() => setScreen({ tab: 'pages', editing: null, creating: false })} />
+            : null
+        })()}
+
+        {/* Config */}
+        {screen.tab === 'config' && (
+          <div>
+            <h1 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 20px', color: 'var(--ink-900)' }}>Config</h1>
+            <div style={{ background: 'var(--paper)', border: '1px solid var(--ink-200)', borderRadius: 'var(--radius-lg)', padding: '24px 28px' }}>
+              <ConfigEditor config={config} />
+            </div>
+          </div>
+        )}
+
+        {/* Users */}
+        {screen.tab === 'users' && (
+          <div>
+            <h1 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 20px', color: 'var(--ink-900)' }}>Users</h1>
+            <div style={{ background: 'var(--paper)', border: '1px solid var(--ink-200)', borderRadius: 'var(--radius-lg)', padding: '24px 28px' }}>
+              <UserManager users={users} currentUser={currentUser} />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )

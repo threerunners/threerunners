@@ -4,7 +4,7 @@ import { cookies } from 'next/headers'
 import { revalidatePath } from 'next/cache'
 import { verifySessionToken, hashPassword, AUTH_COOKIE } from '@/lib/auth'
 import {
-  upsertPage, upsertShoe, upsertConfig,
+  upsertPage, upsertShoe, upsertConfig, deletePage,
   createAdminUser, deleteAdminUser, getAllAdminUsers,
 } from '@/lib/data'
 
@@ -18,9 +18,15 @@ async function requireAuth(): Promise<string> {
 
 export async function savePageAction(id: string, type: string, json: string) {
   await requireAuth()
-  JSON.parse(json) // throws on invalid JSON — caught by the client
+  JSON.parse(json)
   await upsertPage(id, type, json)
   revalidatePath(`/${id === 'marathon-beginners' ? 'marathon/beginners' : id}`)
+}
+
+export async function deletePageAction(id: string) {
+  await requireAuth()
+  await deletePage(id)
+  revalidatePath('/')
 }
 
 export async function saveShoeAction(id: string, json: string) {

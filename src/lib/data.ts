@@ -138,6 +138,10 @@ export async function upsertShoe(id: string, data: string): Promise<void> {
   await turso.execute({ sql: 'INSERT OR REPLACE INTO shoes (id, data) VALUES (?, ?)', args: [id, data] })
 }
 
+export async function deletePage(id: string): Promise<void> {
+  await turso.execute({ sql: 'DELETE FROM pages WHERE id = ?', args: [id] })
+}
+
 export async function getAllConfig(): Promise<Array<{ key: string; value: string }>> {
   const res = await turso.execute('SELECT key, value FROM config ORDER BY key')
   return res.rows.map(r => ({ key: r.key as string, value: r.value as string }))
