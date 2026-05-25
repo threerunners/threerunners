@@ -6,6 +6,7 @@ import { verifySessionToken, hashPassword, AUTH_COOKIE } from '@/lib/auth'
 import {
   upsertPage, upsertShoe, upsertConfig, deletePage,
   createAdminUser, deleteAdminUser, getAllAdminUsers,
+  upsertPersonaRecs,
 } from '@/lib/data'
 
 async function requireAuth(): Promise<string> {
@@ -56,4 +57,11 @@ export async function removeUserAction(username: string) {
   const all = await getAllAdminUsers()
   if (all.length <= 1) throw new Error('Cannot delete the last admin user')
   await deleteAdminUser(username)
+}
+
+export async function savePersonaRecsAction(pageId: string, personaId: string, trainerType: string, json: string) {
+  await requireAuth()
+  JSON.parse(json)
+  await upsertPersonaRecs(pageId, personaId, trainerType, json)
+  revalidatePath(`/${pageId}`)
 }

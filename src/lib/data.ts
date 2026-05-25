@@ -9,6 +9,7 @@ import { turso } from '@/lib/turso'
 import type { Shoe, ShoePricing, ShoeAffiliates } from '@/types/shoe'
 import type { Persona, Goal, HubPageData, SpokePageData } from '@/types/cms'
 import type { Author } from '@/types/author'
+import type { PersonaRecs } from '@/types/recs'
 
 function row<T>(json: unknown): T {
   return JSON.parse(json as string) as T
@@ -149,4 +150,35 @@ export async function getAllConfig(): Promise<Array<{ key: string; value: string
 
 export async function upsertConfig(key: string, value: string): Promise<void> {
   await turso.execute({ sql: 'INSERT OR REPLACE INTO config (key, value) VALUES (?, ?)', args: [key, value] })
+}
+
+// ── Page recommendations ───────────────────────────────────────────────────────
+
+export async function getPageRecs(pageId: string): Promise<PersonaRecs[]> {
+  const res = await turso.execute({ sql: 'SELECT data FROM page_recs WHERE page_id = ?', args: [pageId] })
+  return res.rows.map(r => JSON.parse(r.data as string) as PersonaRecs)
+}
+
+export async function getAllPageRecs(): Promise<Array<{ pageId: string; personaId: string; trainerType: string; data: string }>> {
+  const res = await turso.execute('SELECT page_id, persona_id, trainer_type, data FROM page_recs')
+  return res.rows.map(r => ({
+    pageId: r.page_id as string,
+    personaId: r.persona_id as string,
+    trainerType: r.trainer_type as string,
+    data: r.data as string,
+  }))
+}
+
+export async function upsertPersonaRecs(pageId: string, personaId: string, trainerType: string, data: string): Promise<void> {
+  await turso.execute({
+    sql: 'INSERT OR REPLACE INTO page_recs (page_id, persona_id, trainer_type, data) VALUES (?, ?, ?, ?)',
+    args: [pageId, personaId, trainerType, data],
+  })
+}
+
+export async function deletePersonaRecs(pageId: string, personaId: string, trainerType: string): Promise<void> {
+  await turso.execute({
+    sql: 'DELETE FROM page_recs WHERE page_id = ? AND persona_id = ? AND trainer_type = ?',
+    args: [pageId, personaId, trainerType],
+  })
 }

@@ -60,6 +60,13 @@ async function main() {
       password_hash TEXT NOT NULL,
       created_at INTEGER NOT NULL DEFAULT (strftime('%s','now'))
     );
+    CREATE TABLE IF NOT EXISTS page_recs (
+      page_id TEXT NOT NULL,
+      persona_id TEXT NOT NULL,
+      trainer_type TEXT NOT NULL,
+      data TEXT NOT NULL,
+      PRIMARY KEY (page_id, persona_id, trainer_type)
+    );
   `)
 
   console.log('✓ Tables ready')

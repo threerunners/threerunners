@@ -100,6 +100,16 @@ function ScoreRow({ label, value, onChange }: { label: string; value: number; on
   )
 }
 
+function RideFeelRow({ label, value, onChange }: { label: string; value: number; onChange: (n: number) => void }) {
+  return (
+    <div style={{ display: 'grid', gridTemplateColumns: '100px 1fr 46px', alignItems: 'center', gap: 12, marginBottom: 10 }}>
+      <span style={{ fontSize: 13, color: 'var(--ink-700)' }}>{label}</span>
+      <input type="range" min={0} max={100} step={5} value={value} onChange={e => onChange(+e.target.value)} style={{ width: '100%', accentColor: 'var(--orange-500)' }} />
+      <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--orange-600)', textAlign: 'right' }}>{value}%</span>
+    </div>
+  )
+}
+
 export default function ShoeEditor({ shoe: initial, onBack }: { shoe: Shoe; onBack: () => void }) {
   const [shoe, setShoe] = useState<Shoe>(initial)
   const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle')
@@ -120,6 +130,11 @@ export default function ShoeEditor({ shoe: initial, onBack }: { shoe: Shoe; onBa
   }
   function setMedia<K extends keyof ShoeMedia>(k: K, v: ShoeMedia[K]) {
     setShoe(s => ({ ...s, media: { ...s.media, [k]: v } }))
+  }
+
+  const DEFAULT_RIDE_FEEL = { cushion: 50, response: 50, stability: 50 }
+  function setRideFeel(k: 'cushion' | 'response' | 'stability', v: number) {
+    setShoe(s => ({ ...s, rideFeel: { ...(s.rideFeel ?? DEFAULT_RIDE_FEEL), [k]: v } }))
   }
 
   function save() {
@@ -216,6 +231,34 @@ export default function ShoeEditor({ shoe: initial, onBack }: { shoe: Shoe; onBa
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Ride Feel */}
+        <div>
+          <SectionHead title="Ride Feel (0 – 100%)" />
+          <p style={{ fontSize: 12.5, color: 'var(--ink-500)', margin: '0 0 14px' }}>
+            Objective ride characteristics shown on shoe cards.
+          </p>
+          {(['cushion', 'response', 'stability'] as const).map(k => (
+            <RideFeelRow
+              key={k}
+              label={k.charAt(0).toUpperCase() + k.slice(1)}
+              value={shoe.rideFeel?.[k] ?? 50}
+              onChange={v => setRideFeel(k, v)}
+            />
+          ))}
+        </div>
+
+        {/* Gender Fit */}
+        <div>
+          <SectionHead title="Gender Fit" />
+          <Field label="Who this shoe is suited for">
+            <Pills
+              options={['men', 'women', 'all']}
+              selected={shoe.genderFit ?? ['all']}
+              onChange={v => setShoe(s => ({ ...s, genderFit: v as ('men' | 'women' | 'all')[] }))}
+            />
+          </Field>
         </div>
 
         {/* Editorial */}

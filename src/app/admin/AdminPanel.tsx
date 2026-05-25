@@ -2,11 +2,14 @@
 
 import { useState, useTransition } from 'react'
 import type { Shoe } from '@/types/shoe'
+import type { Persona, Goal } from '@/types/cms'
+import type { PersonaRecs } from '@/types/recs'
 import { deletePageAction, savePageAction } from './actions'
 import ShoeEditor from './ShoeEditor'
 import PageEditor from './PageEditor'
 import ConfigEditor from './ConfigEditor'
 import UserManager from './UserManager'
+import RecsEditor from './RecsEditor'
 
 type PageRow = { id: string; type: string; data: string }
 
@@ -16,12 +19,13 @@ interface AdminPanelProps {
   config: Array<{ key: string; value: string }>
   users: Array<{ username: string; createdAt: number }>
   currentUser: string
+  allPageRecs: Array<{ pageId: string; personaId: string; trainerType: string; data: string }>
 }
 
 type Tab = 'shoes' | 'pages' | 'config' | 'users'
 type Screen =
   | { tab: 'shoes'; editing: string | null }
-  | { tab: 'pages'; editing: string | null; creating: boolean }
+  | { tab: 'pages'; editing: string | null; creating: boolean; editingRecs: string | null }
   | { tab: 'config' }
   | { tab: 'users' }
 
@@ -79,9 +83,10 @@ function ShoeList({ shoes, onEdit }: { shoes: Shoe[]; onEdit: (id: string) => vo
   )
 }
 
-function PageList({ pages, onEdit, onDelete, onNew }: {
+function PageList({ pages, onEdit, onEditRecs, onDelete, onNew }: {
   pages: PageRow[]
   onEdit: (id: string) => void
+  onEditRecs: (id: string) => void
   onDelete: (id: string) => void
   onNew: () => void
 }) {
@@ -117,6 +122,9 @@ function PageList({ pages, onEdit, onDelete, onNew }: {
               </div>
               <div style={{ display: 'flex', gap: 8, flexShrink: 0 }}>
                 <button onClick={() => onEdit(p.id)} style={{ padding: '6px 14px', borderRadius: 8, border: '1.5px solid var(--orange-300)', background: 'var(--orange-50)', color: 'var(--orange-700)', fontSize: 12.5, fontWeight: 600, cursor: 'pointer' }}>Edit</button>
+                {p.type === 'hub' && (
+                  <button onClick={() => onEditRecs(p.id)} style={{ padding: '6px 14px', borderRadius: 8, border: '1.5px solid var(--ink-300)', background: 'var(--ink-50)', color: 'var(--ink-700)', fontSize: 12.5, fontWeight: 600, cursor: 'pointer' }}>Recs</button>
+                )}
                 <button onClick={() => del(p.id)} disabled={isPending && deleting === p.id} style={{ padding: '6px 12px', borderRadius: 8, border: '1px solid #fecaca', background: '#fff', color: '#b91c1c', fontSize: 12.5, fontWeight: 600, cursor: 'pointer' }}>
                   {deleting === p.id ? '…' : 'Delete'}
                 </button>
@@ -182,9 +190,12 @@ function NewPageForm({ onCreated, onCancel }: { onCreated: (page: PageRow) => vo
   )
 }
 
-export default function AdminPanel({ shoes: initialShoes, pages: initialPages, config, users, currentUser }: AdminPanelProps) {
+export default function AdminPanel({ shoes: initialShoes, pages: initialPages, config, users, currentUser, allPageRecs }: AdminPanelProps) {
   const [screen, setScreen] = useState<Screen>({ tab: 'shoes', editing: null })
   const [pages, setPages] = useState<PageRow[]>(initialPages)
+
+  const personas: Persona[] = JSON.parse(config.find(c => c.key === 'personas')?.value ?? '[]')
+  const goals: Goal[] = JSON.parse(config.find(c => c.key === 'goals')?.value ?? '[]')
 
   const activeTab: Tab = screen.tab
 
@@ -210,7 +221,7 @@ export default function AdminPanel({ shoes: initialShoes, pages: initialPages, c
       {/* Tab bar */}
       <div style={{ background: 'var(--paper)', borderBottom: '1px solid var(--ink-200)', padding: '0 28px', display: 'flex', gap: 4 }}>
         <TabBtn label="Shoes" count={initialShoes.length} active={activeTab === 'shoes'} onClick={() => setScreen({ tab: 'shoes', editing: null })} />
-        <TabBtn label="Pages" count={pages.length} active={activeTab === 'pages'} onClick={() => setScreen({ tab: 'pages', editing: null, creating: false })} />
+        <TabBtn label="Pages" count={pages.length} active={activeTab === 'pages'} onClick={() => setScreen({ tab: 'pages', editing: null, creating: false, editingRecs: null })} />
         <TabBtn label="Config" active={activeTab === 'config'} onClick={() => setScreen({ tab: 'config' })} />
         <TabBtn label="Users" active={activeTab === 'users'} onClick={() => setScreen({ tab: 'users' })} />
       </div>
@@ -231,14 +242,15 @@ export default function AdminPanel({ shoes: initialShoes, pages: initialPages, c
         })()}
 
         {/* Pages */}
-        {screen.tab === 'pages' && !screen.creating && screen.editing === null && (
+        {screen.tab === 'pages' && !screen.creating && screen.editing === null && screen.editingRecs === null && (
           <div>
             <h1 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 20px', color: 'var(--ink-900)' }}>Pages</h1>
             <PageList
               pages={pages}
-              onEdit={id => setScreen({ tab: 'pages', editing: id, creating: false })}
+              onEdit={id => setScreen({ tab: 'pages', editing: id, creating: false, editingRecs: null })}
+              onEditRecs={id => setScreen({ tab: 'pages', editing: null, creating: false, editingRecs: id })}
               onDelete={id => setPages(prev => prev.filter(p => p.id !== id))}
-              onNew={() => setScreen({ tab: 'pages', editing: null, creating: true })}
+              onNew={() => setScreen({ tab: 'pages', editing: null, creating: true, editingRecs: null })}
             />
           </div>
         )}
@@ -246,16 +258,42 @@ export default function AdminPanel({ shoes: initialShoes, pages: initialPages, c
           <div>
             <h1 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 20px', color: 'var(--ink-900)' }}>New page</h1>
             <NewPageForm
-              onCreated={page => { setPages(prev => [...prev, page]); setScreen({ tab: 'pages', editing: page.id, creating: false }) }}
-              onCancel={() => setScreen({ tab: 'pages', editing: null, creating: false })}
+              onCreated={page => { setPages(prev => [...prev, page]); setScreen({ tab: 'pages', editing: page.id, creating: false, editingRecs: null }) }}
+              onCancel={() => setScreen({ tab: 'pages', editing: null, creating: false, editingRecs: null })}
             />
           </div>
         )}
-        {screen.tab === 'pages' && !screen.creating && screen.editing !== null && (() => {
+        {screen.tab === 'pages' && !screen.creating && screen.editing !== null && screen.editingRecs === null && (() => {
           const page = pages.find(p => p.id === screen.editing)
           return page
-            ? <PageEditor pageId={page.id} pageType={page.type} pageData={page.data} shoes={initialShoes} onBack={() => setScreen({ tab: 'pages', editing: null, creating: false })} />
+            ? <PageEditor pageId={page.id} pageType={page.type} pageData={page.data} shoes={initialShoes} onBack={() => setScreen({ tab: 'pages', editing: null, creating: false, editingRecs: null })} />
             : null
+        })()}
+        {screen.tab === 'pages' && screen.editingRecs !== null && (() => {
+          const pageId = screen.editingRecs
+          const pageRecs: PersonaRecs[] = allPageRecs
+            .filter(r => r.pageId === pageId)
+            .map(r => JSON.parse(r.data) as PersonaRecs)
+          return (
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
+                <button onClick={() => setScreen({ tab: 'pages', editing: null, creating: false, editingRecs: null })}
+                  style={{ fontSize: 13, color: 'var(--ink-500)', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
+                  ← Pages
+                </button>
+              </div>
+              <h1 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 8px', color: 'var(--ink-900)' }}>Recommendations — {pageId}</h1>
+              <div style={{ background: 'var(--paper)', border: '1px solid var(--ink-200)', borderRadius: 'var(--radius-lg)', padding: '24px 28px' }}>
+                <RecsEditor
+                  pageId={pageId}
+                  initialRecs={pageRecs}
+                  personas={personas}
+                  goals={goals}
+                  shoes={initialShoes}
+                />
+              </div>
+            </div>
+          )
         })()}
 
         {/* Config */}

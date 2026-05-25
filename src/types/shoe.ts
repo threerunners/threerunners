@@ -39,6 +39,12 @@ export interface ShoeMedia {
   gallery: string[]
 }
 
+export interface ShoeRideFeel {
+  cushion: number
+  response: number
+  stability: number
+}
+
 export interface Shoe {
   id: string
   name: string
@@ -51,6 +57,8 @@ export interface Shoe {
   tags: ShoeTags
   editorial: ShoeEditorial
   media: ShoeMedia
+  rideFeel?: ShoeRideFeel
+  genderFit?: ('men' | 'women' | 'all')[]
 }
 
 export interface RetailerPricing {

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
-import { getShoe, getPersonas, getGoals, getBestAffiliateUrl, getBestPrice, getHubPage, getAuthor } from '@/lib/data'
+import { getShoe, getPersonas, getGoals, getBestAffiliateUrl, getBestPrice, getHubPage, getAuthor, getPageRecs } from '@/lib/data'
 import type { HubShoeRecommendation } from '@/types/cms'
 import type { Author } from '@/types/author'
+import type { ShoeDisplayData } from '@/types/recs'
 import BreadcrumbNav from '@/components/shared/BreadcrumbNav'
 import FindMyShoe from '@/components/hub/FindMyShoe'
 import SubNavTabs from '@/components/hub/SubNavTabs'
@@ -25,17 +26,33 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function HalfMarathonHubPage() {
-  const [page, personas, goals, author] = await Promise.all([
+  const [page, personas, goals, author, pageRecs] = await Promise.all([
     getHubPage('half-marathon'),
     getPersonas(),
     getGoals(),
     getAuthor('ashley-morgan'),
+    getPageRecs('half-marathon'),
   ])
 
   if (!page) return <div className="wrap" style={{ padding: '60px 0' }}>Page not found. Run <code>npm run seed</code>.</div>
 
   const filteredPersonas = personas.filter(p => page.personasShown.includes(p.id))
 
+  // Build shoesMap for dynamic recommendations
+  const recShoeIds = Array.from(new Set(pageRecs.flatMap(r => r.picks.map(p => p.shoeId)).filter(Boolean)))
+  const shoesMapEntries = await Promise.all(
+    recShoeIds.map(async id => {
+      const [shoe, affiliateUrl, bestPrice] = await Promise.all([
+        getShoe(id),
+        getBestAffiliateUrl(id),
+        getBestPrice(id),
+      ])
+      return shoe ? [id, { shoe, affiliateUrl, bestPrice } satisfies ShoeDisplayData] as const : null
+    })
+  )
+  const shoesMap = Object.fromEntries(shoesMapEntries.filter((e): e is NonNullable<typeof e> => e !== null))
+
+  // Static editorial picks
   const shoeCards = await Promise.all(
     (page.shoeRecommendations as HubShoeRecommendation[]).map(async rec => ({
       shoe: (await getShoe(rec.shoeId))!,
@@ -75,21 +92,30 @@ export default async function HalfMarathonHubPage() {
           <p style={{ fontSize: 16, color: 'var(--ink-600)', lineHeight: 1.65, margin: 0 }}>{page.subtitle}</p>
         </div>
 
-        <FindMyShoe personas={filteredPersonas} goals={goals} defaultPersona={page.defaultPersona} />
+        <FindMyShoe
+          personas={filteredPersonas}
+          goals={goals}
+          defaultPersona={page.defaultPersona}
+          pageRecs={pageRecs}
+          shoesMap={shoesMap}
+        />
+
         <SubNavTabs tabs={page.subNavTabs} />
 
         <div style={{ marginBottom: 40 }}>
           <p style={{ fontSize: 14.5, color: 'var(--ink-600)', lineHeight: 1.7, maxWidth: '72ch', margin: 0 }}>{page.whoThisIsFor}</p>
         </div>
 
-        <div style={{ marginBottom: 56 }}>
-          <h2 style={{ fontFamily: 'inherit', fontSize: 24, fontWeight: 700, letterSpacing: '-0.01em', margin: '0 0 20px', color: 'var(--ink-900)' }}>Our picks</h2>
-          <div className="picks-mobile" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
-            {shoeCards.map(({ shoe, rec, affiliateUrl, bestPrice }) => (
-              <ShoeCard key={rec.shoeId} shoe={shoe} recommendation={rec} variant="hub" affiliateUrl={affiliateUrl} bestPrice={bestPrice} />
-            ))}
+        {pageRecs.length === 0 && shoeCards.length > 0 && (
+          <div style={{ marginBottom: 56 }}>
+            <h2 style={{ fontFamily: 'inherit', fontSize: 24, fontWeight: 700, letterSpacing: '-0.01em', margin: '0 0 20px', color: 'var(--ink-900)' }}>Our picks</h2>
+            <div className="picks-mobile" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
+              {shoeCards.map(({ shoe, rec, affiliateUrl, bestPrice }) => (
+                <ShoeCard key={rec.shoeId} shoe={shoe} recommendation={rec} variant="hub" affiliateUrl={affiliateUrl} bestPrice={bestPrice} />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         <AffiliateDisclosure variant="inline" />
 
