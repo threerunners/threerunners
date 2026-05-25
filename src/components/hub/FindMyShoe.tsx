@@ -413,7 +413,7 @@ export default function FindMyShoe({ personas, goals, defaultPersona, pageRecs =
             {hasRecs ? 'Pick your profile to see personalised shoe picks' : 'Refine the three picks below for your training'}
           </span>
         </div>
-        <PanelBody />
+        {PanelBody()}
       </div>
 
       {/* ── Dynamic recommendations ──────────────────────────────────────── */}
@@ -499,7 +499,7 @@ export default function FindMyShoe({ personas, goals, defaultPersona, pageRecs =
           {editOpen && (
             <div style={{ borderTop: '1px solid var(--ink-150)', background: 'var(--bg)', padding: '20px 0 24px' }}>
               <div className="wrap">
-                <PanelBody />
+                {PanelBody()}
               </div>
             </div>
           )}
